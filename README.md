@@ -11,3 +11,10 @@ This project is an assignment for the [Software Architecture course](https://arq
 The app is deployed at [https://arquisoft.github.io/viade_en3b/](https://arquisoft.github.io/viade_0/) which also contains a [technical documentation](https://arquisoft.github.io/viade_en3b/docs).
 
 More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_en3b/wiki).
+
+Developers:
+Pablo Cañal Suárez
+Carmen Vigo Rodríguez
+Miguel Cuesta Martínez
+Lucía Megido García
+Elena Rodríguez Río
