@@ -48,35 +48,17 @@ The objective of Viade is to give users a platform where they can share their ta
 | Usability | All users must be able to use the application with no difficulties. Therefore, the app will be intuitive and will have a user-friendly interface.
 | Performance | The service should run fluidly, with no problems or restrictions that affect to its performance efficiency. 
 | Availability | The app should always work whevener the user has Internet connection and the server is available.
-| Security | User data must be safe. Communications with other devices or users, if done, must be secure.
+| Security | User data must be safe. Communications with other devices or users, if done, must be secure, preventing any data leak. 
 |===
 
 
 === Stakeholders
 
-[role="arc42help"]
-****
-.Contents
-Explicit overview of stakeholders of the system, i.e. all person, roles or organizations that
-
-* should know the architecture
-* have to be convinced of the architecture
-* have to work with the architecture or with code
-* need the documentation of the architecture for their work
-* have to come up with decisions about the system or its development
-
-.Motivation
-You should know all parties involved in development of the system or affected by the system.
-Otherwise, you may get nasty surprises later in the development process.
-These stakeholders determine the extent and the level of detail of your work and its results.
-
-.Form
-Table with role names, person names, and their expectations with respect to the architecture and its documentation.
-****
-
 [options="header",cols="1,2,2"]
 |===
-|Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+|Role/Name|Description|Expectations
+| Teaching staff | They mark the developers work during the project and give considerations about how it will be done | A well-formed application, accomplishing the requirements that were proposed.
+| Developers | The workforce of this project will develop the main system while understanding the constraints and requests of the client. | End with a good, usable, stable application, that represents the efforts we put during the project.
+| End Users | People who will use the final application. The system must suit the main goals for the users to have the best experience. | Have an intuitive, fluid and easy use of the Viade system.
+| SOLID Devs | They provide the main technology in which the application is based | They are interested in the best results possible of the project, as any work could be helpful as feedback of the SOLID technology.
 |===
