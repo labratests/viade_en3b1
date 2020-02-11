@@ -1,31 +1,11 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-[role="arc42help"]
-****
-Viade is a proyect that consists of a decentralized routes management system developed following solid specifications.
-
-* Allow users to share information like pictures or videos about routes with the world at any time.
-** The system will be decentralized. Data storage is separated from the app.
-** Based on the React framework.
-* Main quality goals are usability and maintainability. They will be described in a more detailed way in the next chapter.
-* Teachers of Software Architecture and developers will be the stakeholders.
-
-****
-
-==== Developers: 
-
-* Pablo Cañal Suárez. 
-* Carmen Vigo Rodríguez.
-* Miguel Cuesta Martínez.
-* Lucía Megido García.
-* Elena Rodríguez Río.
-
 === Requirements Overview
 
-[role="arc42help"]
-****
-.Contents
+Nowadays, all the average social platforms for hikers are centralized and not totally secure services.
+With Viade, we present a proyect that consists of a decentralized routes management system developed following solid specifications.
+
 The main requirements are:
 
 * The system will be based on a decentralized architecture where data storage is separated from the app.
@@ -37,8 +17,15 @@ The main requirements are:
 * It should be possible to view routes loaded by users that are using a different app, so interoperability with other route management systems should be taken into account.
 
 .Motivation
-The objective of Viade is to give users a platform where they can share their taste and opinions about the routes they take.
-****
+The objective of Viade is to give users a platform where they can share their taste and opinions about the routes they take, in a way that they can be sure all their data will be secure.
+
+==== Developers: 
+
+* Pablo Cañal Suárez. 
+* Carmen Vigo Rodríguez.
+* Miguel Cuesta Martínez.
+* Lucía Megido García.
+* Elena Rodríguez Río.
 
 === Quality Goals
 
@@ -46,9 +33,9 @@ The objective of Viade is to give users a platform where they can share their ta
 |===
 |Goal|Description
 | Usability | All users must be able to use the application with no difficulties. Therefore, the app will be intuitive and will have a user-friendly interface.
+| Security | User data must be safe. Communications with other devices or users, if done, must be secure, preventing any data leak. 
 | Performance | The service should run fluidly, with no problems or restrictions that affect to its performance efficiency. 
 | Availability | The app should always work whevener the user has Internet connection and the server is available.
-| Security | User data must be safe. Communications with other devices or users, if done, must be secure, preventing any data leak. 
 |===
 
 
