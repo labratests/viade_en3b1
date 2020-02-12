@@ -1,26 +1,6 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
-
-[role="arc42help"]
-****
-.Contents
-System scope and context - as the name suggests - delimits your system (i.e. your scope) from all its communication partners
-(neighboring systems and users, i.e. the context of your system). It thereby specifies the external interfaces.
-
-If necessary, differentiate the business context (domain specific inputs and outputs) from the technical context (channels, protocols, hardware).
-
-.Motivation
-The domain interfaces and technical interfaces to communication partners are among your system's most critical aspects. Make sure that you completely understand them.
-
-.Form
-Various options:
-
-* Context diagrams
-* Lists of communication partners and their interfaces.
-****
-
-
 === Business Context
 
 [role="arc42help"]
@@ -47,14 +27,11 @@ Viade main goal is to give the ability to store, visualize and share routes to t
 [role="arc42help"]
 ****
 .Contents
-Technical interfaces (channels and transmission media) linking your system to its environment. In addition a mapping of domain specific input/output to the channels, i.e. an explanation with I/O uses which channel.
+The main idea is to separate the data storage from the rest of the app, so each user will be able to store its data. The communication between the different users and the data sharing will be managed by the application itself.
 
-.Motivation
-Many stakeholders make architectural decision based on the technical interfaces between the system and its context. Especially infrastructure or hardware designers decide these technical interfaces.
+To achieve this, we follow the SOLID specifications as it ensures that our application is decentralized. Each user will be able to store its data in their own POD and grant the applications access to just certain type of data. With SOLID users can use the data of the routes in other applications that also use that kind of data.
 
-.Form
-E.g. UML deployment diagram describing channels to neighboring systems,
-together with a mapping table showing the relationships between channels and input/output.
+Javascript is going to be used as the programming language, since we are going to make use of the framework React, which makes it easier to develop interactive and attractive graphic interfaces, which is key to obtain a usable interface.
 
 ****
 
