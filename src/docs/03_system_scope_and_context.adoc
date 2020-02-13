@@ -3,7 +3,7 @@
 
 === Business Context
 
-[role="arc42help"]
+
 ****
 .Contents
 The public target for the applications is all types of users, but especially non-technical users.
@@ -17,14 +17,14 @@ As the application will support interoperability, our users will be able to use 
 .Motivation
 Viade main goal is to give the ability to store, visualize and share routes to the routes withou storing the actual data, which is kept by the users.
 ****
-
+[role="arc42help"]
 **<Diagram or Table>**
 
 **<optionally: Explanation of external domain interfaces>**
 
 === Technical Context
 
-[role="arc42help"]
+
 ****
 .Contents
 The main idea is to separate the data storage from the rest of the app, so each user will be able to store its data. The communication between the different users and the data sharing will be managed by the application itself.
@@ -34,7 +34,7 @@ To achieve this, we follow the SOLID specifications as it ensures that our appli
 Javascript is going to be used as the programming language, since we are going to make use of the framework React, which makes it easier to develop interactive and attractive graphic interfaces, which is key to obtain a usable interface.
 
 ****
-
+[role="arc42help"]
 **<Diagram or Table>**
 
 **<optionally: Explanation of technical interfaces>**
