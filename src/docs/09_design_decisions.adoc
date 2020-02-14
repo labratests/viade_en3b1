@@ -2,8 +2,16 @@
 == Design Decisions
 
 
-[role="arc42help"]
 ****
+[width="%"]
+|=======
+|Decisions |Advantages |Disadvantages
+|JavaScript |Provides more resources in Solid. |Not a programming language we are used to.
+|Solid | |The scarce sources of documentation.
+|React |Efficient update and render of the UI.| Library of a language we are not used to (JavaScript)
+|Testing | | 
+|Github | | 
+|=======
 .Contents
 Important, expensive, large scale or risky architecture decisions including rationals.
 With "decisions" we mean selecting one alternative based on given criteria.
@@ -12,7 +20,7 @@ Please use your judgement to decide whether an architectural decision should be 
 here in this central section or whether you better document it locally
 (e.g. within the white box template of one building block).
 
-Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
+Avoid redundancy. Refer to section , where you already captured the most important decisions of your architecture.
 
 .Motivation
 Stakeholders of your system should be able to comprehend and retrace your decisions.
