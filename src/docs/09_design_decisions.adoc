@@ -3,7 +3,7 @@
 
 
 
-We have talk about the archtectural decisions we have made at secion 4 (Solution Strategy), but in this part of the documentation we will explain the advantages of them, as well as their disadvantages.
+We talked about the decisions we have made at section four (Solution Strategy), but in this part of the documentation we will explain the advantages of them, as well as their disadvantages.
 
 [cols="^.^,^.^,^.^", options=header, %autowidth]
 |=======
