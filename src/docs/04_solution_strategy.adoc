@@ -2,12 +2,12 @@
 == Solution Strategy
 
 ****
-.Contents
-A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture. These include
 
 .Technology Decisions
 
-Viade will be developed with Solid, the innovative platform that allows the creation of decentralized applications by using Secure Pods, so the privacy of its users is always respected. As the Solid API is fully written in JavaScript we have decided to do the same and implement our application in the same programming language, for it is the best option for the framework we have chosen as well. 
+Viade will be developed with Solid, the innovative platform that allows the creation of decentralized applications by using Secure Pods, so the privacy of its users is always respected.
+
+As the Solid API is fully written in JavaScript we have decided to do the same and implement our application in the same programming language, for it is the best option for the framework we have chosen as well. 
 
 We will be working with the React framework, which makes it easier to develop interactive and attractive graphic interfaces, which is key to obtain the usable interface we are looking for.
 
@@ -18,15 +18,21 @@ We have not decided yet which testing tool we will be using for testing our proj
 We are using Travis for having our project correctly integrated.
 
 
-.design and architectural decisions
+.Design and Architectural Decisions
 (decisions about the top-level decomposition of the system, e.g. usage of an architectural pattern or design pattern)
 
 
+.Quality Goals
 decisions on on how to achieve key quality goals
 
 
-organizational decisions
-(relevant organizational decisions, e.g. selecting a development process or delegating certain tasks to third parties.)
+.Organizational Decisions
+We have agreed that we will be rotating the charge of writing the minutes, so after each reunion the responsible of sumarizing what we have discussed is a different member.
+
+As all of us have little knowledge about Solid and React, we have decided that all members will do research on both topics and share the links we find interesting through a decidated issue.
+
+.Contents
+A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture. These include
 
 .Motivation
 These decisions form the cornerstones for your architecture. They are the basis for many other detailed decisions or implementation rules.
