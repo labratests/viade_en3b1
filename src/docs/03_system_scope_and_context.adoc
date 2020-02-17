@@ -12,14 +12,6 @@ The users will be able to communicate among them by sharing routes, pictures or 
 The application is decentralize, the application and the data storage are separated, being this last one owned and stored by the user.
 As the application will support interoperability, our users will be able to use the routes and other data in different applications with a similar functionality.
 
-[role="arc42help"]
-***
-**<Diagram or Table>**
-
-**<optionally: Explanation of external domain interfaces>**
-
-***
-
 === Technical Context
 
 The main idea is to separate the data storage from the rest of the app, so each user will be able to store its data. The communication between the different users and the data sharing will be managed by the application itself.
@@ -28,9 +20,4 @@ To achieve this, we follow the SOLID specifications as it ensures that our appli
 
 Javascript is going to be used as the programming language, since we are going to make use of the framework React, which makes it easier to develop interactive and attractive graphic interfaces, which is key to obtain a usable interface.
 
-[role="arc42help"]
-**<Diagram or Table>**
-
-**<optionally: Explanation of technical interfaces>**
-
-**<Mapping Input/Output to Channels>**
+image:03_businessContext.png["Class diagram"]
