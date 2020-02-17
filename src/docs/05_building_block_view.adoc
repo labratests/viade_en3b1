@@ -3,6 +3,18 @@
 
 == Building Block View
 
+
+Viade first block view consist on the division of the application in layers.
+
+image:05_block_view1.png["Group interaction"]
+
+The view is responsible of showing the user interface.
+
+The model is responsible of interacting with the user`s pod an obtaining the data.
+
+The controller coordinates both parts.
+
+
 [role="arc42help"]
 ****
 .Content
