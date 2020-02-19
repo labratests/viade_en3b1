@@ -9,6 +9,7 @@ As the Solid API is fully written in JavaScript we have decided to do the same a
 
 We will be working with the React framework, which makes it easier to develop interactive and attractive graphic interfaces, which is key to obtain the usable interface we are looking for.
 
+
 We have decided to run the application in a Node.js environment because of the many tools and modules that provides to developers, it executes code faster than any other language and increases the efficiency of the development process, and much more reasons.
 
 For testing we are going to use Codecov and Codacy because they are already configured in our repository, though we are studing the option of including JEST. Also, we are using Travis for having our project correctly integrated.
