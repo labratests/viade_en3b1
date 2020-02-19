@@ -34,6 +34,7 @@ The objective of Viade is to give users a platform where they can share their ta
 |Goal|Description
 | Usability | All users must be able to use the application with no difficulties. Therefore, the app will be intuitive and will have a user-friendly interface.
 | Security | User data must be safe. Communications with other devices or users, if done, must be secure, preventing any data leak. 
+| Interoprability | All the system should allow the users to interact with other applications that use the same standard.
 | Performance | The service should run fluidly, with no problems or restrictions that affect to its performance efficiency. 
 | Availability | The app should always work whevener the user has Internet connection and the server is available.
 |===

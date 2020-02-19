@@ -1,7 +1,6 @@
 [[section-quality-scenarios]]
 == Quality Requirements
 
-
 [role="arc42help"]
 ****
 
@@ -18,6 +17,8 @@ concrete and measurable.
 ****
 
 === Quality Tree
+
+image:10_qualitytree.svg["Quality tree diagram"]
 
 [role="arc42help"]
 ****
