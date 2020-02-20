@@ -9,6 +9,7 @@ As the Solid API is fully written in JavaScript we have decided to do the same a
 
 We will be working with the React framework, which makes it easier to develop interactive and attractive graphic interfaces, which is key to obtain the usable interface we are looking for.
 
+
 We have decided to run the application in a Node.js environment because of the many tools and modules that provides to developers, it executes code faster than any other language and increases the efficiency of the development process, and much more reasons.
 
 For testing we are going to use Codecov and Codacy because they are already configured in our repository, though we are studing the option of including JEST. Also, we are using Travis for having our project correctly integrated.
@@ -24,16 +25,16 @@ Top-level-wise, our architecture will be based on the Model-View-Controller (MVC
 
 * The main code will be developed in JavaScript, and deployed on node.js. It fills the Controller role.
 
-In a more realistic deploy of the application, the use of the Broker patter could be interesting to redirect services, but on this scale it is unnecessary.
+In a more realistic deploy of the application, the use of the Broker pattern could be interesting to redirect services, but on this scale it is unnecessary.
 
 
 === Quality Goals
 
 As designers of the application and participants of the Inrupt challenge, he have compromised to follow the basic quality goals of the Solid project:
 
-* Freedom to decide where the data is stored, which will be obtained by decoupling between the content and the ViaDe app. The main concern will be, of course, the storage of the routes.
+* Freedom to decide where the data is stored, which will be obtained by decoupling between the content and the ViaDe app. The main focus will be, of course, the storage of the routes.
 
-* No apparent change when switching between this and other Solid apps, which we will guarantee by means of a modular design.
+* No apparent change when switching between this and other apps, which we will guarantee by means of a modular design.
 
 * Reuse of data. Even if it is not very noticeable by users, the open source code allows for easy reutilization and improvement of our design in the future. In this spirit, everything we develop will be published in a public repository of Github.
 
@@ -42,9 +43,9 @@ Apart from that, we have some more formal usability goals:
 
 * Uncomplicated interface (visual representation of the routes)
 
-* Responsibility of the application (mainly notifications) for interactions between users. Could optionally scale to real-time sharing of routes.
+* Feedback from the application (mainly notifications) for interactions between users. Could optionally scale to real-time sharing of routes.
 
-* Portable application to mobile devices (optional as it requires use of React Native)
+* Portable application to mobile devices (optional as it requires use of React Native).
 
 
 === Organizational Decisions
@@ -52,16 +53,3 @@ Apart from that, we have some more formal usability goals:
 We have agreed that we will be rotating the charge of writing the minutes, so after each reunion the responsible of sumarizing what we have discussed is a different member.
 
 As all of us have little knowledge about Solid and React, we have decided that all members will do research on both topics and share the links we find interesting through a decidated issue.
-
-.Contents
-A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture. These include
-
-.Motivation
-These decisions form the cornerstones for your architecture. They are the basis for many other detailed decisions or implementation rules.
-
-.Form
-Keep the explanation of these key decisions short.
-
-Motivate what you have decided and why you decided that way,
-based upon your problem statement, the quality goals and key constraints.
-Refer to details in the following sections.
