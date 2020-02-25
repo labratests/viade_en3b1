@@ -6,7 +6,7 @@
 
 Viade first block view consist on the division of the application in layers.
 
-image:05_block_view1.png["Group interaction"]
+image:05_block_view1.PNG["Group interaction"]
 
 The view is responsible of showing the user interface.
 
