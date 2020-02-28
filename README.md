@@ -12,9 +12,29 @@ The app is deployed at [https://arquisoft.github.io/viade_en3b/](https://arquiso
 
 More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_en3b/wiki).
 
-Developers:
+## Developers:
 * Pablo Cañal Suárez
 * Carmen Vigo Rodríguez
 * Miguel Cuesta Martínez
 * Lucía Megido García
 * Elena Rodríguez Río
+
+## Building and running the web app locally
+
+You’ll need to have [Node](https://nodejs.org/) 8.16.0 or Node 10.16.0 or later version on your local development machine.
+
+Run:
+
+```
+npm start
+```
+
+## Building the docs locally
+
+In order to create the docs you'll need [asciidoctor](https://asciidoctor.org/) and in case you use [plantuml](https://plantuml.com/) drawings, you'll also need [openjdk 8](https://openjdk.java.net/).
+
+Once they have been installed, the docs can be generated with:
+
+```
+npm run docs
+```
