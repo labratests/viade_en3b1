@@ -14,14 +14,6 @@ const Main = () => {
         <Router>
           <Link to="/welcome">Home</Link>
         </Router>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React. Developed using Docker.
-        </a>
       </header>
     </div>
   );

@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
-import { PrivateLayout, PublicLayout, NotLoggedInLayout } from "@layouts";
-import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
-import { Main } from "./Main";
-import { PageNotFound } from "./PageNotFound";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import  Main  from "./Main.jsx";
+import  PageNotFound from "./PageNotFound.jsx";
 
 const Routes = () => (
   <Router>
     <Fragment>
       <Switch>
-        <PublicLayout exact path="/404" component={PageNotFound} />
+        <Route exact path="/404" component={PageNotFound} />
         <Redirect exact from="/" to="/welcome" />
         <Route exact path="/welcome" component={Main} />
         <Redirect to="/404" />
