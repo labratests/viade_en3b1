@@ -1,6 +1,5 @@
 import React from 'react'
 import { Typography, Card, CardContent, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import { LoggedIn, LoggedOut, AuthButton } from '@solid/react';
 
 function Login() {

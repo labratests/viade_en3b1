@@ -15,8 +15,6 @@ const Main = () => {
         <Router>
           <Link href="/login" variant="body2">Sign in</Link>
         </Router>
-
-        <AuthButton popup="https://solid.community/common/popup.html" login="Login here!" logout="Log me out"/>
       </header>
     </div>
   );

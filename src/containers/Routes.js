@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import  Main  from "./Main.jsx";
-import  PageNotFound from "./PageNotFound.jsx";
-import SignIn from "./SignIn.jsx";
+import  Main  from "./Main.js";
+import  PageNotFound from "./PageNotFound.js";
 import Login from "../services/login/Login.js";
 
 const Routes = () => (
