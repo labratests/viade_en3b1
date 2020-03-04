@@ -13,6 +13,7 @@ script:
   - npm test && codecov
   - npm run build
   - npm run docs
+warnings_are_errors: false
 deploy:
   provider: pages
   skip_cleanup: true
