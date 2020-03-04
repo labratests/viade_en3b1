@@ -3,7 +3,6 @@ import "typeface-roboto";
 import logo from "../logo.svg";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link } from '@material-ui/core';
-import { LoginButton, LogoutButton, AuthButton } from '@solid/react';
 
 const Main = () => {
   return (
