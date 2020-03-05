@@ -9,6 +9,6 @@ const PageNotFound = () => {
             <p>Go back to <Link href="/">Home</Link></p>
         </div>
     );
-}
+};
 
 export default PageNotFound;

@@ -1,15 +1,25 @@
-import React from 'react'
+import React from 'react';
 import { Typography, Card, CardContent, Button } from '@material-ui/core';
 import { LoggedIn, LoggedOut, AuthButton } from '@solid/react';
 
 function Login() {
 
-    const auth = require('solid-auth-client');
-    popupLogin(auth);
+    async function popupLogin(auth) {
+        let session = await auth.currentSession();
+        let popupUri = 'https://solid.community/common/popup.html';
+        if (!session){
+            session = await auth.popupLogin({ popupUri });
+        }
+    
+        return (`${session.webId}`);
+    };
     
     function logout(auth) {
         auth.logout().then(() => alert('Goodbye!'));
-    }
+    };
+
+    const auth = require('solid-auth-client');
+    popupLogin(auth);
 
     return (
         <div>
@@ -30,16 +40,7 @@ function Login() {
                 </Card>
             </LoggedIn>
         </div>
-    )
+    );
 }
 
-async function popupLogin(auth) {
-    let session = await auth.currentSession();
-    let popupUri = 'https://solid.community/common/popup.html';
-    if (!session)
-        session = await auth.popupLogin({ popupUri });
-
-    return (`${session.webId}`);
-}
-
-export default Login
+export default Login;
