@@ -7,9 +7,3 @@ test('renders routes component', () => {
   const linkElement = getByText(/Sign in/i);
   expect(linkElement).toBeInTheDocument();
 });
-
-test('renders prueba mal', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/PruebaNOTexists/i);
-  expect(linkElement).toBeInTheDocument();
-});
