@@ -6,7 +6,6 @@ function Login() {
 
     const auth = require('solid-auth-client');
     popupLogin(auth);
-    const session = auth.currentSession();
     
     function logout(auth) {
         auth.logout().then(() => alert('Goodbye!'));
