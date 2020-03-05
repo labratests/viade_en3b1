@@ -1,15 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import CardProfile from './ProfileCard';
 import CardRouteManagement from './RoutesManagementCard';
 import FriendsManagement from './FriendsCard';
-import CardMain from './MainCard';
+import CentralPanel from './MainCard';
+import grey from '@material-ui/core/colors/grey';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    backgroundColor: grey[300],
   },
 }));
 
@@ -26,7 +27,7 @@ export default function SpacingGrid() {
               <CardRouteManagement />
             </Grid>
             <Grid item>
-                <CardMain />
+                <CentralPanel />
             </Grid>
             <Grid item >
                 <FriendsManagement />
