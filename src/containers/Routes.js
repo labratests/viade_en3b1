@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import  Main  from "./Main.js";
 import  PageNotFound from "./PageNotFound.js";
 import Login from "../services/login/Login.js";
 
 const Routes = () => (
-  <Router>
+  <HashRouter>
     <Fragment>
       <Switch>
         <Route exact path="/404" component={PageNotFound} />
@@ -15,7 +15,7 @@ const Routes = () => (
         <Redirect to="/404" />
       </Switch>
     </Fragment>
-  </Router>
+  </HashRouter>
 );
 
 export default Routes;
