@@ -1,9 +1,9 @@
-class CreateGeoJSON{
+class ParseRouteToGeoJSON{
     constructor(route){
         this.route=route;
     }
 
-    createGeoJSON(){
+    parse(){
 
         var strData = "<ul><li>type: Route</li>";
         strData += "<li>name: " + this.route.getName() + "</li>";
@@ -18,7 +18,8 @@ class CreateGeoJSON{
         });
 
         strData += "</ul>";
-        strData += "</ul>";    
-
+        strData += "</ul>";  
+          
+        return strData;
     }
 }

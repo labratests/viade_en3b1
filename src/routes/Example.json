@@ -1,0 +1,61 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Trip",
+    "name": "A route 1",
+    "description": "The test route with all the properties",
+    "itinerary": {
+      "@type": "ItemList",
+      "numberOfItems": 1,
+      "itemListOrder": "http://schema.org/ItemListOrderDescending",
+      "itemListElement": [
+        {
+          "@type": "GeoCoordinates",
+          "name": "Waypoint 1",
+          "address": "Calle Cardenal Cienfuegos",
+          "addressCountry": "ES",
+          "elevation": 266,
+          "latitude": 43.3551061,
+          "longitude": -5.8512792,
+          "postalCode": 33007,
+          "media": {
+            "@type": "ItemList",
+            "numberOfItems": 2,
+            "itemListOrder": "http://schema.org/ItemListOrderDescending",
+            "itemListElement": [
+              {
+                "@type": "VideoObject",
+                "author": "John Doe",
+                "contentUrl": "mexico-beach.avi",
+                "datePublished": "2013-11-28"
+              },
+              {
+                "@type": "ImageObject",
+                "author": "Jane Doe",
+                "contentUrl": "mexico-beach.jpg",
+                "datePublished": "2008-01-25"
+              }
+            ]
+          }
+        }
+      ],
+      "comments": {
+        "@type": "ItemList",
+        "numberOfItems": 2,
+        "itemListOrder": "http://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          {
+            "@type": "UserComments",
+            "commentText": "hello there!",
+            "commentTime": "2020-02-17T15:58:42",
+            "creator": "Ben kenobi."
+          },
+          {
+            "@type": "UserComments",
+            "commentText": "general kenobi!",
+            "commentTime": "2020-02-17T16:58:42",
+            "creator": "The angry cyborg"
+          }
+        ]
+      }
+    }
+  }

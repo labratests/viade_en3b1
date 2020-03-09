@@ -1,9 +1,10 @@
 class Route{
-    constructor( name, date, description, routeElements, media ){
-        this.name=name;
-        this.date=date;
-        this.description=description;
-        this.routeElements=routeElements;
+    constructor( name, date, description, routeElements, comments, media ){
+        this.name = name;
+        this.date = date;
+        this.description = description;
+        this.routeElements = routeElements;
+        this.comments = comments;
         this.media = media;
     }
 
@@ -21,6 +22,10 @@ class Route{
 
     getRouteElements(){
         return this.routeElements;
+    }
+
+    getComments(){
+        return this.comments;
     }
 
     getMedia(){

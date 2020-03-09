@@ -1,8 +1,8 @@
 class RouteElement{
     constructor( name, latitude, londitude ){
-        this.name=name;
+        this.name = name;
         this.latitude = latitude;
-        this.londitude=londitude;
+        this.londitude = londitude;
     }
 
     getName(){
