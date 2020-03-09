@@ -1,18 +1,25 @@
 {
-  "name": "viade_0",
+  "name": "viade_en3b",
   "version": "0.1.0",
-  "homepage": "https://arquisoft.github.io/viade_0/",
+  "homepage": "https://arquisoft.github.io/viade_en3b/",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.9.5",
+    "@inrupt/solid-react-components": "^0.5.0",
+    "@material-ui/core": "^4.9.4",
+    "@material-ui/icons": "^4.9.1",
+    "@solid/query-ldflex": "^2.9.0",
+    "@solid/react": "^1.8.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "node.js": "0.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "shx": "0.3.2"
+    "shx": "0.3.2",
+    "solid-auth-client": "^2.4.1",
+    "typeface-roboto": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",

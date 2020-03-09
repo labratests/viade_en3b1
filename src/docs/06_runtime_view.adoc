@@ -1,54 +1,37 @@
 [[section-runtime-view]]
 == Runtime View
 
+In this section, some use case scenarios will be described to indicate concrete behaviour of the application to a certain interaction.
 
-[role="arc42help"]
-****
-.Contents
-The runtime view describes concrete behavior and interactions of the system’s building blocks in form of scenarios from the following areas:
+This segment will be in continuous development.
 
-* important use cases or features: how do building blocks execute them?
-* interactions at critical external interfaces: how do building blocks cooperate with users and neighboring systems?
-* operation and administration: launch, start-up, stop
-* error and exception scenarios
+=== Sharing a new route
 
-Remark: The main criterion for the choice of possible scenarios (sequences, workflows) is their *architectural relevance*. It is *not* important to describe a large number of scenarios. You should rather document a representative selection.
+Sharing a route with another user (friend) will be one of the most done operations in the application. To do that, the user that wants to store his route will send the coordinates and map data to the system, which will store it in the user's POD. 
 
-.Motivation
-You should understand how (instances of) building blocks of your system perform their job and communicate at runtime.
-You will mainly capture scenarios in your documentation to communicate your architecture to stakeholders that are less willing or able to read and understand the static models (building block view, deployment view).
+At the same time, to see the route of another user, the application will provide the necessary information for the user to visualize it graphically.
 
-.Form
-There are many notations for describing scenarios, e.g.
-
-* numbered list of steps (in natural language)
-* activity diagrams or flow charts
-* sequence diagrams
-* BPMN or EPCs (event process chains)
-* state machines
-* ...
-
-****
-
-=== <Runtime Scenario 1>
+image:6_RuntimeView_sharing.svg["Sharing routes"]
 
 
-* _<insert runtime diagram or textual description of the scenario>_
-* _<insert description of the notable aspects of the interactions between the
-building block instances depicted in this diagram.>_
+=== Sharing contents of an existing route
 
-It is possible to use a sequence diagram:
+This is also one of the most frequent scenarios, in which a user will share some contents of the route it has done. 
 
-[plantuml,"Sequence diagram",png]
-----
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+These contents can be photos, videos or comments of the route. The application will act as a middle intermediate to store the given content as a new element of the selected route. As the diagram below shows, the photo (also video or comment) will be stored in the user's POD, and the system will give feedback to the user about the state of the operation.
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
-----
-=== <Runtime Scenario 2>
+image:6_RuntimeView_sharingContents.svg["Sharing contents of routes"]
 
-=== ...
 
-=== <Runtime Scenario n>
+=== Adding a Friend
+
+In Viade, the community is formed by Friends, and they can be added by simply passing the user's ID to the application. Then, if the requested user accepts the invitation, the system will make the proper changes.
+
+image:6_RuntimeView_friends.svg["Adding e new friend"]
+
+
+=== Notifications
+
+Some of the operations of the application will require feedback for the user to know if the action was succesful or, on the contrary, if it has been rejected in any way. For that, we will integrate a notification system that will be the module in charge of giving that mentioned feedback to the user.
+
+image:6_RuntimeView_notificationSystem.svg["Sharing contents of routes"]

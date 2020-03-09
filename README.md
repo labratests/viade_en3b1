@@ -8,13 +8,33 @@ This repository contains a skeleton of the VIADE project.
 
 This project is an assignment for the [Software Architecture course](https://arquisoft.github.io/) following [these requirements](https://labra.solid.community/public/SoftwareArchitecture/AssignmentDescription/).
 
-The app is deployed at [https://arquisoft.github.io/viade_en3b/](https://arquisoft.github.io/viade_0/) which also contains a [technical documentation](https://arquisoft.github.io/viade_en3b/docs).
+The app is deployed [here](https://arquisoft.github.io/viade_en3b/) which also contains a [technical documentation](https://arquisoft.github.io/viade_en3b/docs).
 
 More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_en3b/wiki).
 
-Developers:
-Pablo Cañal Suárez
-Carmen Vigo Rodríguez
-Miguel Cuesta Martínez
-Lucía Megido García
-Elena Rodríguez Río
+## Developers:
+* Pablo Cañal Suárez
+* Carmen Vigo Rodríguez
+* Miguel Cuesta Martínez
+* Lucía Megido García
+* Elena Rodríguez Río
+
+## Building and running the web app locally
+
+You’ll need to have [Node](https://nodejs.org/) 8.16.0 or Node 10.16.0 or later version on your local development machine.
+
+Run:
+
+```
+npm start
+```
+
+## Building the docs locally
+
+In order to create the docs you'll need [asciidoctor](https://asciidoctor.org/) and in case you use [plantuml](https://plantuml.com/) drawings, you'll also need [openjdk 8](https://openjdk.java.net/).
+
+Once they have been installed, the docs can be generated with:
+
+```
+npm run docs
+```
