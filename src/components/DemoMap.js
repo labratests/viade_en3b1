@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup,Polyline } from 'react-leaflet';
-import * as data from "../data/demoRoute.json";
+import * as data from "../demoData/demoRoute.json";
 
 let activePoint = null;
 
