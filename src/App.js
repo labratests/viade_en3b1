@@ -13,17 +13,17 @@ import Login from "./services/login/Login";
 
 function App() {
   return (
-    /*<div>
+    <div>
       <div>
         <NavBar />
       </div>
       <div>
         <SpacingGrid />
       </div>
-    </div>*/
-    <div>
-      <Login />
     </div>
+    // <div>
+    //   <Login />
+    // </div>
   );
 }
 

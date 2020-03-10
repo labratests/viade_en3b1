@@ -11,7 +11,7 @@ const Routes = () => (
         <Route exact path="/404" component={PageNotFound} />
         <Redirect exact from="/" to="/home" />
         <Route exact path="/home" component={Main} />
-        <Route exact path="/login" component={Login} />
+        {/* <Route exact path="/login" component={Login} /> */}
         <Redirect to="/404" />
       </Switch>
     </Fragment>
