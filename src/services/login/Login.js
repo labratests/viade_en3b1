@@ -1,8 +1,6 @@
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
-import { LoggedIn, LoggedOut, AuthButton } from '@solid/react';
-import NavBar from '../../graphic interface/NavBar';
-import SpacingGrid from '../../graphic interface/MainContainer';
+import { Button } from '@material-ui/core';
+import { LoggedIn, LoggedOut } from '@solid/react';
 
 
 const auth = require('solid-auth-client');
@@ -16,11 +14,11 @@ class Login extends React.Component {
             session = await auth.popupLogin({ popupUri });
         }
 
-        return (`${session.webId}`);
+        return (`${session.webId}`); // example of getting user's name. returns something like: "https://pablocanalsuarez.solid.community/profile/card#me"
     };
 
     logout(auth) {
-        auth.logout().then(() => alert('Goodbye!'));
+        auth.logout();
     };
 
     render() {

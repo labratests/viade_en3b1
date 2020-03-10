@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Login from "../services/login/Login.js";
-import {AuthButton} from '@solid/react';
 
 const NavBar = () => {
     const classes = useStyles();
