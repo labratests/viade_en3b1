@@ -5,7 +5,7 @@ import { LoggedIn, LoggedOut } from '@solid/react';
 
 const auth = require('solid-auth-client');
 
-class Login extends React.Component {
+export class Login extends React.Component {
 
     async popupLogin(auth) {
         let session = await auth.currentSession();
@@ -36,15 +36,5 @@ class Login extends React.Component {
         );
     }
 }
-/*
-    <Card>
-        <CardContent>
-            <Typography variant="h2" color="secondary">Login successful!</Typography>
-            <Typography variant="h4" >Logged in as </Typography>
-            <Button variant="outlined" color="secondary" onClick={() => logout(auth)}>Log out</Button>
-        </CardContent>
-    </Card>
-*/
-
 
 export default Login;
