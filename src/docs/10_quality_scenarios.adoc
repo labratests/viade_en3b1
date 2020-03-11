@@ -24,4 +24,5 @@ We will contemplate two kind of scenarios:
 |7 | Security | The application must prevent any user's data leak. | Low
 |8 | Scalability | If number of users increase, the application's performance must be the same. | Medium
 |9 | Portability | The system should be easy to port to another platform in a short period of time. | Low
+|10 | Performance | Load times must be under 1 second. | High
 |===
