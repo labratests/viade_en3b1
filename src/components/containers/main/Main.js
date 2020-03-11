@@ -5,7 +5,7 @@ import SpacingGrid from '../../graphic interface/MainContainer.js';
 
 const Main = () => {
   return (
-    <div className="App">
+    <div>
       <div>
         <NavBar />
       </div>
