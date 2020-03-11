@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import  Main  from "./Main.js";
 import  PageNotFound from "./PageNotFound.js";
-import Register from './Register.js';
+import Register from '../services/register/Register.js';
 
 const Routes = () => (
   <HashRouter>

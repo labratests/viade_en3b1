@@ -10,8 +10,6 @@ import { LoggedOut } from '@solid/react';
 const NavBar = () => {
     const classes = useStyles();
 
-    var login = new Login();
-
     return(
         <div className={classes.root}>
             <AppBar position="static">
