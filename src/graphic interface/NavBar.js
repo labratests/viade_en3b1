@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Login from "../services/login/Login.js";
 import { LoggedOut } from '@solid/react';
+import Dashboard from '../services/dashboard/Dashboard.js';
 
 const NavBar = () => {
     const classes = useStyles();
@@ -15,7 +16,8 @@ const NavBar = () => {
             <AppBar position="static">
                 <Toolbar >
                     <Typography variant="h6" className={classes.title}>viade_en3b</Typography>
-                    <LoggedOut><Button href={"#/register"} color="inherit">Register</Button></LoggedOut>
+                    <Dashboard/>
+                    <LoggedOut><Button href={"#/register"} color="inherit">Sign up</Button></LoggedOut>
                     <Login/>
                 </Toolbar>
             </AppBar>
