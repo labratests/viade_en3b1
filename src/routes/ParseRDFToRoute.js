@@ -22,11 +22,11 @@ class ParseRDFToRoute{
        for(var element in jsonRoute){
 
            if(element === "name"){
-                name = "value";
+               // name = "value";
            } else if (element === "description"){
-                description = "value";
+              //  description = "value";
            } else if (element === "date"){
-                date = "value";
+               // date = "value";
            } else if (element === "comment"){
                 // iterate the comments and push each of them
            } else if (element === "media"){
