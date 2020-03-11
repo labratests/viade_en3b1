@@ -1,18 +1,17 @@
 import React from "react";
 import "typeface-roboto";
-import logo from "../logo.svg";
-import { Link } from '@material-ui/core';
+import NavBar from '../graphic interface/NavBar.js';
+import SpacingGrid from '../graphic interface/MainContainer.js';
 
 const Main = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          In development.
-        </p>
-        <Link href={"#/login"} variant="body2">Sign in</Link>
-      </header>
+      <div>
+        <NavBar />
+      </div>
+      <div>
+        <SpacingGrid />
+      </div>
     </div>
   );
 };

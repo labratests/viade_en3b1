@@ -1,10 +1,12 @@
-import React from "react";
+import React from 'react';
+import Routes from './containers/Routes.js';
 import "./App.css";
-import Routes from "./containers/Routes.js";
 
 function App() {
   return (
-    <Routes />
+    <div>
+      <Routes/>
+    </div>
   );
 }
 
