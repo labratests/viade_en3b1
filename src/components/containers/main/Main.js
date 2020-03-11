@@ -1,7 +1,7 @@
 import React from "react";
 import "typeface-roboto";
-import NavBar from '../graphic interface/NavBar.js';
-import SpacingGrid from '../graphic interface/MainContainer.js';
+import NavBar from '../../graphic interface/NavBar.js';
+import SpacingGrid from '../../graphic interface/MainContainer.js';
 
 const Main = () => {
   return (
