@@ -4,8 +4,6 @@
 
 # VIADE EN3B
 
-This repository contains a skeleton of the VIADE project.
-
 This project is an assignment for the [Software Architecture course](https://arquisoft.github.io/) following [these requirements](https://labra.solid.community/public/SoftwareArchitecture/AssignmentDescription/).
 
 The app is deployed [here](https://arquisoft.github.io/viade_en3b/) which also contains a [technical documentation](https://arquisoft.github.io/viade_en3b/docs).
