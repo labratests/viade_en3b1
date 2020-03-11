@@ -1,12 +1,12 @@
 import React from 'react';
 import "typeface-roboto";
-import { Link } from '@material-ui/core';
+import { Link, Typography } from '@material-ui/core';
 
 const PageNotFound = () => {
     console.log("HELLO 3 "+process.env.PUBLIC_URL);
     return (
-        <div>
-            <h2>Sorry, there's nothing to see here</h2>
+        <div style={{marginLeft:'5vh', marginTop:'5vh'}}>
+            <Typography variant="h4">Sorry, there's nothing to see here</Typography>
             <p>Go back to <Link href={"#/"}>Home</Link></p>
         </div>
     );
