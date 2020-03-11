@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Divider from '@material-ui/core/Divider';
+import DemoMap from '../map/DemoMap.js'
 
 const useStyles = makeStyles({
   root: {
@@ -52,7 +53,7 @@ function CardMain() {
         </Typography>
         <Divider />
         <Typography variant="h5" component="h2">
-          SPACE TO INSERT THE MAP
+          <DemoMap></DemoMap>
         </Typography>
         <Divider />
       </CardContent>
