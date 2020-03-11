@@ -30,8 +30,8 @@ In Viade, the community is formed by Friends, and they can be added by simply pa
 image:6_RuntimeView_friends.svg["Adding e new friend"]
 
 
-=== Handling Errors
+=== Notifications
 
-During some of the operations, the system will be exposed to critical errors. To avoid any complication for the user at the front-end, the system will have a Recovery System module. With it, the application will try to recover the previous operation to the one that caused the error and continuous working normally.
+Some of the operations of the application will require feedback for the user to know if the action was succesful or, on the contrary, if it has been rejected in any way. For that, we will integrate a notification system that will be the module in charge of giving that mentioned feedback to the user.
 
-image:6_RuntimeView_error.svg["Sharing contents of routes"]
+image:6_RuntimeView_notificationSystem.svg["Sharing contents of routes"]
