@@ -16,7 +16,10 @@ class ParseRouteToGeoJSON{
             strData += "<li>geometry: {";
             strData += "<li>type: Point,<li>";
             strData += "<li>name: " + trackpoint.getName() + ",</li>";
-            strData += "<li>coordinates: [" + trackpoint.getLongitude() + "," + trackpoint.getLatitude() + "]},";
+            strData += "<li>coordinates: [" + trackpoint.getLongitude() + "," + trackpoint.getLatitude() + "]}";
+            if(trackpoint !== this.route.routeElements.get(this.route.routeElements.length)){
+                strData += ",";
+            }
         }
 
         strData += "</ul>";
