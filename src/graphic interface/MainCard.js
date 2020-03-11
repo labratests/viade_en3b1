@@ -53,7 +53,6 @@ function CardMain() {
         </Typography>
         <Divider />
         <Typography variant="h5" component="h2">
-          SPACE TO INSERT THE MAP
           <DemoMap></DemoMap>
         </Typography>
         <Divider />

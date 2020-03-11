@@ -21,8 +21,8 @@ export default function CardProfile() {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography variant="h5" component="h2">
-          Username
+        <Typography className={classes.pos} color="textSecondary">
+          Username 
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           friends: 
