@@ -14,26 +14,26 @@ For developing Viade we will be following the next strategy (the reasoning of ou
 
 ==== Quality Goals
 
-As designers of the application and participants of the Inrupt challenge, he have compromised to follow the basic quality goals of the Solid project:
+Because of the participation in the Inrupt challenge, we will follo the Solid project principles:
 
-* Freedom to decide where the data is stored, which will be obtained by decoupling between the content and the ViaDe app. The main focus will be, of course, the storage of the routes.
+* Freedom to decide where the data is stored.
 
-* No apparent change when switching between this and other apps, which we will guarantee by means of a modular design.
+* No change when switching between apps (modular design).
 
-* Reuse of data. Even if it is not very noticeable by users, the open source code allows for easy reutilization and improvement of our design in the future. In this spirit, everything we develop will be published in a public repository of Github.
+* Reuse of data.
 
 
-Apart from that, we have some more formal usability goals:
+Basic usability goals:
 
-* Uncomplicated interface (visual representation of the routes)
+* Uncomplicated interface (visual route interface).
 
-* Feedback from the application (mainly notifications) for interactions between users. Could optionally scale to real-time sharing of routes.
+* Feedback for interactions between users.
 
-* Portable application to mobile devices (optional as it requires use of React Native).
+* Portable to mobile devices (optional).
 
 
 ==== Organizational Decisions
 
 We have agreed that we will be rotating the charge of writing the minutes, so after each reunion the responsible of sumarizing what we have discussed is a different member.
 
-As all of us have little knowledge about Solid and React, we have decided that all members will do research on both topics and share the links we find interesting through a decidated issue.
+As all of us have little knowledge about Solid and React, we have decided that all members will do research on both topics and share the links we find interesting through a dedicated issue.
