@@ -22,3 +22,5 @@ class RouteElement{
         return this.londitude;
     }
 }
+
+export default RouteElement;
