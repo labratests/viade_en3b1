@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Value, List } from '@solid/react'
 
 const useStyles = makeStyles({
     root: {
@@ -13,11 +14,20 @@ const useStyles = makeStyles({
     },
     pos: {
       marginBottom: 12,
+      align: "left",
     },
   });
 
 export default function FriendsManagement() {
     const classes = useStyles();
+
+    const childrenTrimmed = (item, index) =>
+    <Typography className={classes.pos} color="textSecondary"
+      align = "left" key={index}>
+        <a href = {item}>
+            {`${item}`.split('.')[0].split('//')[1]}
+        </a>
+    </Typography>;
   
     return (
       <Card className={classes.root}>
@@ -25,12 +35,9 @@ export default function FriendsManagement() {
         <Typography variant="h5" component="h2">
           Friends
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Friend1 
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Friend2 
-        </Typography>
+        <List src = "user.vcard_url"
+            children = {childrenTrimmed} >
+        </List>
       </CardContent>
         <CardActions>
             <Button size="small">Add friend</Button>

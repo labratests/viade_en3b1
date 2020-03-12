@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Main from '../Main';
+import Main from '../../../../containers/Main';
 
 test('renders sign in link', () => {
     const { getByText } = render(<Main />);

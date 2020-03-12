@@ -19,7 +19,7 @@ class Profile extends Component {
                     <LoggedIn>Logged in as <Value src="user.name"/>
                     <ul>
                         <li>Name:   <Value src="user.vcard_fn"/></li>
-                        <li>Friends:
+                        <li>Friends: {'$user.vcard_url'}
                             <List src = "user.vcard_url"
                                 children = {childrenTrimmed} >
                             </List>
