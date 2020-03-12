@@ -28,12 +28,10 @@ export class Login extends React.Component {
                     <Button variant="outlined" color="inherit" onClick={() => this.popupLogin(auth)}>Sign in</Button>
                 </LoggedOut>
                 <LoggedIn>
-                    <div>
-                        <Button variant="outlined" color="inherit" onClick={() => this.logout(auth)}>Sign out</Button>
-                    </div>
+                    <Button variant="outlined" color="inherit" onClick={() => this.logout(auth)}>Sign out</Button>
                 </LoggedIn>
             </div>
-        );
+        )
     }
 }
 

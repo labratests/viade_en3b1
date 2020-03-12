@@ -10,12 +10,12 @@ The app is deployed [here](https://arquisoft.github.io/viade_en3b/) which also c
 
 More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_en3b/wiki).
 
-## Developers:
-* Pablo Cañal Suárez
-* Carmen Vigo Rodríguez
-* Miguel Cuesta Martínez
-* Lucía Megido García
-* Elena Rodríguez Río
+## Developers
+*  Pablo Cañal Suárez
+*  Carmen Vigo Rodríguez
+*  Miguel Cuesta Martínez
+*  Lucía Megido García
+*  Elena Rodríguez Río
 
 ## Building and running the web app locally
 

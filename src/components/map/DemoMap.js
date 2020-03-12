@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup,Polyline } from 'react-leaflet';
 import * as data from "../../demoData/demoRoute.json";
-
-let activePoint = null;
 
 export default class DemoMap extends Component {
   points = data.features.map(point => (
