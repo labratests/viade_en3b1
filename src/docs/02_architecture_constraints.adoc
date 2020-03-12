@@ -6,9 +6,9 @@
 |Issue
 |Explanation
 
-|Free time
-|The amount of work required for this course project (3 hours of autonomous work per 2 hours of class) may prove problematic.
-Even though the project is planned around the amount of time we have, it could end up as too large if we consider coordinating between ourselves consumes time.
+|Lack of time
+|The amount of work required for this course project (7.5 hours per week) may prove problematic.
+Even though the project is planned around the amount of time we have, it could end up as too large if we consider coordinating between ourselves consumes extra time.
 
 |Licenses
 |We have limited resources, and some of the licenses that could be interesting to try are not included in the ones provided by our studen accounts.
@@ -21,9 +21,8 @@ There are some materials about them for free, but of course the best books and c
 |Coordination issues
 |The problems that may come from working with other people, distributing the tasks and making code understandable by others somehow also limits the development of the project.
 
-|Formation
-|The less knowledge we have on this technologies, the more time and effort we will have to spend learning about them.
-Our lack of use of most of the tools presented in this project makes the need for study materials and free time worse.
+|Use of React Framework
+|As we have no previous knowledge of React, its compulsory use limits using the web deveolpment techniques we are used to
 |===
 
 
