@@ -5,12 +5,12 @@ import CardProfile from './ProfileCard';
 import CardRouteManagement from './RoutesManagementCard';
 import FriendsManagement from './FriendsCard';
 import CentralPanel from './MainCard';
-import grey from '@material-ui/core/colors/grey';
+import { LoggedIn } from '@solid/react';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: grey[300],
+    // backgroundColor: grey[300],
   },
 }));
 
@@ -22,16 +22,22 @@ export default function SpacingGrid() {
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={spacing}>
-            <Grid item>
-              <CardProfile />
+          <Grid item>
+            <CardProfile />
+            <LoggedIn>
               <CardRouteManagement />
-            </Grid>
-            <Grid item>
-                <CentralPanel />
-            </Grid>
-            <Grid item >
-                <FriendsManagement />
-            </Grid>
+            </LoggedIn>
+          </Grid>
+          <Grid item>
+            <LoggedIn>
+              <CentralPanel />
+            </LoggedIn>
+          </Grid>
+          <Grid item >
+            <LoggedIn>
+              <FriendsManagement />
+            </LoggedIn>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

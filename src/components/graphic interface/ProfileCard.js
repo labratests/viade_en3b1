@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -21,29 +21,28 @@ const useStyles = makeStyles({
 export default function CardProfile() {
   const classes = useStyles();
 
-//  const totalFriends = 0; Miguel, recordatory to make it so that
-//  it counts the friends. It's 2:37 AM right now, so not for the 0.1
+  //  const totalFriends = 0; Miguel, recordatory to make it so that
+  //  it counts the friends. It's 2:37 AM right now, so not for the 0.1
 
   return (
-    <Card className={classes.root}>
+    <Card elevation={5} className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2">
-            Profile
+          Profile
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-            <LoggedOut>You are here as a guest.</LoggedOut>
-            <LoggedIn>Logged in as <Value src="user.name"/></LoggedIn>
+          <LoggedOut>You are here as a guest.</LoggedOut>
+          <LoggedIn>Logged in as <Value src="user.name" /></LoggedIn>
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-            Friends: 
+        <LoggedIn>
+          <Typography className={classes.pos} color="textSecondary">
+            Activities:
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-            Activities: 
+          <Divider />
+          <Typography className={classes.pos} color="textSecondary">
+            My last activity:
         </Typography>
-        <Divider />
-        <Typography className={classes.pos} color="textSecondary">
-            My last activity: 
-        </Typography>
+        </LoggedIn>
         <Divider />
       </CardContent>
     </Card>

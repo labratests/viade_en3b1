@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 
 const mainUseStyles = makeStyles(theme => ({
   root: {
+    marginTop: '5vh',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
@@ -26,7 +27,7 @@ const mainUseStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
+    width: 550,
     height: 550,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
@@ -37,7 +38,7 @@ function CardMain() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card elevation={5} className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2">
           Username
@@ -66,7 +67,7 @@ export default function CentralPanel(){
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+      <GridList cellHeight={220} spacing={2} className={classes.gridList}>
           <GridListTile cols={2} rows={2}>
             <CardMain />
           </GridListTile>

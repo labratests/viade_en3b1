@@ -30,7 +30,7 @@ export default function FriendsManagement() {
     </Typography>;
   
     return (
-      <Card className={classes.root}>
+      <Card elevation={5} className={classes.root}>
           <CardContent>
         <Typography variant="h5" component="h2">
           Friends
