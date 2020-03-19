@@ -1,6 +1,6 @@
 import Route from "../entities/Route.js";
 import RouteElement from "../entities/RouteElement.js";
-import ParseRouteToGeoJSON from "./ParseRouteToGeoJSON.js";
+import ParseRouteToGeoJSON from "../parser/ParseRouteToGeoJSON.js";
 
 class Example{
     constructor(){
