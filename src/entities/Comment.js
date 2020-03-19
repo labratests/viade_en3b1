@@ -3,3 +3,5 @@ class Comment{
         this.text=text;
     }
 }
+
+export default Comment;
