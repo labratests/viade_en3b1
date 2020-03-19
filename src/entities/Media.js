@@ -3,3 +3,5 @@ class Media{
         this.url=url;
     }
 }
+
+export default Media;
