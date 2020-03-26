@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import DemoMap from '../map/DemoMap.js'
+import MapSnapshot from '../map/MapSnapshot.js'
 
 const useStyles = makeStyles({
     root: {
@@ -27,14 +27,14 @@ export default function MyRouteCard() {
         <Typography className={classes.pos} color="textSecondary">
           Date: 
         </Typography>
+        <Typography variant="h5" component="h2">
+          <MapSnapshot></MapSnapshot>
+        </Typography>
         <Typography className={classes.pos} color="textSecondary">
           Distance: 
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           Time: 
-        </Typography>
-        <Typography variant="h5" component="h2">
-          <DemoMap></DemoMap>
         </Typography>
       </CardContent>
     </Card>
