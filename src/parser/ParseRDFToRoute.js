@@ -16,6 +16,7 @@ class ParseRDFToRoute{
         var name = "";
         var description = "";
         var date = "";
+        var time = "";
         var routeElements = [];
         var comments = [];
         var media = [];
@@ -23,6 +24,7 @@ class ParseRDFToRoute{
         name = jsonRoute.getString("Name");
         description = jsonRoute.getString("Description");
         date = jsonRoute.getString("Date");
+        time = jsonRoute.getString("Time");
 
         var jsonArray = jsonRoute.getJSONArray("elements");
         var element = new RouteElement("", 0, 0, 0);
@@ -52,7 +54,7 @@ class ParseRDFToRoute{
         });
 
         
-        return new Route(name, date, description, routeElements, comments, media);
+        return new Route(name, date, time, description, routeElements, comments, media);
 
     }
 
