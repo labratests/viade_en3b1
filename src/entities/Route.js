@@ -7,6 +7,7 @@ class Route{
         this.routeElements = routeElements;
         this.comments = comments;
         this.media = media;
+        this.totalDistance = this.getTotalDistance();
     }
 
     getName(){

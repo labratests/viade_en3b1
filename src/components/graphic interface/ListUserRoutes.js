@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MyRouteCard from './MyRouteCard';
 import { LoggedIn } from '@solid/react';
+import { Card } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,7 +30,7 @@ export default function ListUserRoutes() {
         {size.map(card => (
           <Grid item>
           <LoggedIn>
-            <MyRouteCard />
+            <MyRouteCard route={card} />
           </LoggedIn>
         </Grid>
         ))}

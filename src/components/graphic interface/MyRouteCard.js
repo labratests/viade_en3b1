@@ -15,26 +15,26 @@ const useStyles = makeStyles({
     },
   });
 
-export default function MyRouteCard() {
+export default function MyRouteCard(props) {
   const classes = useStyles();
 
   return (
     <Card elevation={5} className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          Route Name
+          Route Name: {props.route.name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Date: 
+          Date: {props.route.date}
         </Typography>
         <Typography variant="h5" component="h2">
           <MapSnapshot></MapSnapshot>
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Distance: 
+          Distance: {props.route.totalDistance}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Time: 
+          Time: {props.route.time}
         </Typography>
       </CardContent>
     </Card>
