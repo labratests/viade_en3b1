@@ -3,14 +3,17 @@
 
 ==== Design Decisions
 
-For developing Viade we will be following the next strategy (the reasoning of our decisions is explained in section 9):
+For developing Viade we will be following the next strategy (the necessary reasoning of our decisions is explained in section 9):
 
 * Platform: Solid.
 * Programming Language: JavaScript.
-* Main Library: React.
 * Environment: NodeJS.
 * (Continuous) Integration and Testing: Travis, Codecov, Codacy.
 * Architectural Patter: Model-View-Controller.
+* Libraries:
+** Main library: React.
+** POD access: link:https://github.com/jeff-zucker/solid-file-client[Solid-File-Client].
+** Map display: link:https://leafletjs.com/[Leaflet].
 
 ==== Quality Goals
 
