@@ -14,7 +14,7 @@ For developing Viade we will be following the next strategy (the reasoning of ou
 
 ==== Quality Goals
 
-Because of the participation in the Inrupt challenge, we will follo the Solid project principles:
+Because of the participation in the Inrupt challenge, we will follow the Solid project principles:
 
 * Freedom to decide where the data is stored.
 
@@ -34,6 +34,6 @@ Basic usability goals:
 
 ==== Organizational Decisions
 
-We have agreed that we will be rotating the charge of writing the minutes, so after each reunion the responsible of sumarizing what we have discussed is a different member.
+We have agreed that the best way for developing Viade is following Scrum.
 
-As all of us have little knowledge about Solid and React, we have decided that all members will do research on both topics and share the links we find interesting through a dedicated issue.
+Functionality will be developed incrementally and at the end of every sprint (three weeks long) we will have working software.
