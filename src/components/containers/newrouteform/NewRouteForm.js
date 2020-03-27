@@ -1,20 +1,20 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import DataForm from '../stepper/dataform/DataForm';
 import ReviewForm from '../stepper/reviewform/ReviewForm';
 import MapForm from '../stepper/mapform/MapForm';
 import NavBar from '../../graphic interface/NavBar';
-
+import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
+import Avatar from '@material-ui/core/Avatar';
+import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
+import FilterHdrIcon from '@material-ui/icons/FilterHdr';
+import Grid from '@material-ui/core/Grid';
 
 const NewRouteForm = () => {
     const classes = useStyles();
@@ -30,12 +30,17 @@ const NewRouteForm = () => {
 
     return (
         <React.Fragment>
-            <NavBar/>
+            <NavBar />
             <main className={classes.layout}>
                 <Paper className={classes.paper}>
+                    <Avatar className={classes.avatar}>
+                        <FilterHdrIcon fontSize="large" />
+                    </Avatar>
+
                     <Typography component="h1" variant="h4" align="center">
                         Create your own route
                     </Typography>
+
                     <Stepper activeStep={activeStep} className={classes.stepper}>
                         {steps.map((label) => (
                             <Step key={label}>
@@ -43,16 +48,27 @@ const NewRouteForm = () => {
                             </Step>
                         ))}
                     </Stepper>
+
                     <React.Fragment>
                         {activeStep === steps.length ? (
                             <React.Fragment>
-                                <Typography variant="h5" gutterBottom>
-                                    Thank you for your order.
-                                </Typography>
-                                <Typography variant="subtitle1">
-                                    Your order number is #2001539. We have emailed your order confirmation, and will
-                                    send you an update when your order has shipped.
-                                </Typography>
+                                <Grid container className={classes.grid}>
+                                    <Grid item xs={12} sm={2}>
+                                        <DirectionsWalkIcon className={classes.icon} fontSize="large" style={{ fill: "orange" }} />
+                                    </Grid>
+                                    <Grid>
+                                        <Grid item xs={12} sm={6}>
+                                            <Typography variant="h5" gutterBottom>
+                                                Route created
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <Typography variant="subtitle1">
+                                                Your new track was succesfully created and saved
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
                             </React.Fragment>
                         ) : (
                                 <React.Fragment>
@@ -69,7 +85,7 @@ const NewRouteForm = () => {
                                             onClick={handleNext}
                                             className={classes.button}
                                         >
-                                            {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                                            {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
                                         </Button>
                                     </div>
                                 </React.Fragment>
@@ -97,9 +113,6 @@ function getStepContent(step) {
 }
 
 const useStyles = makeStyles((theme) => ({
-    appBar: {
-        position: 'relative',
-    },
     layout: {
         width: 'auto',
         marginLeft: theme.spacing(2),
@@ -131,6 +144,18 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(3),
         marginLeft: theme.spacing(1),
     },
+    avatar: {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        backgroundColor: theme.palette.warning.main,
+    },
+    icon: {
+        width: 65,
+        height: 65,
+    },
+    grid: {
+        // marginLeft: theme.spacing(5),
+    }
 }));
 
 export default NewRouteForm
