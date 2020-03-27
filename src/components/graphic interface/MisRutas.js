@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { Link, MenuItem, Paper, Popper, Grow, ClickAwayListener, MenuList, ListItemIcon, ListItemText, Typography } from '@material-ui/core';
+import { Link, MenuItem, Paper, Popper, Grow, MenuList, ListItemIcon, Typography } from '@material-ui/core';
 import ListIcon from '@material-ui/icons/List';
 import EditLocationIcon from '@material-ui/icons/EditLocation';
+import { Redirect } from 'react-router';
 
 const MisRutas = () => {
     const classes = useStyles();
@@ -15,20 +15,6 @@ const MisRutas = () => {
         setOpen(prevOpen => !prevOpen);
     };
 
-    const handleClose = event => {
-        if (anchorRef.current && anchorRef.current.contains(event.target)) {
-            return;
-        }
-
-        setOpen(false);
-    };
-
-    function handleListKeyDown(event) {
-        if (event.key === 'Tab') {
-            event.preventDefault();
-            setOpen(false);
-        }
-    }
     return (
         <div>
             <Button
@@ -46,21 +32,21 @@ const MisRutas = () => {
                         {...TransitionProps}
                         style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                     >
-                        <Paper className={classes.menu}>
+                        <Paper >
                             <MenuList >
 
-                                <MenuItem>
+                                <MenuItem onClick={event =>  window.location.href='#/dashboard'}>
                                     <ListItemIcon>
                                         <ListIcon />
-                                        <ListItemText primary="Ver Rutas" />
                                     </ListItemIcon>
+                                    <Typography>Ver Rutas</Typography>
                                 </MenuItem>
 
-                                <MenuItem>
+                                <MenuItem onClick={event =>  window.location.href='#/newRoute'}>
                                     <ListItemIcon>
                                         <EditLocationIcon />
-                                        <ListItemText primary="Crear Ruta" />
                                     </ListItemIcon>
+                                    <Typography>Crear nueva</Typography>
                                 </MenuItem>
 
                             </MenuList>
