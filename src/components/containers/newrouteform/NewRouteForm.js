@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
         height: 65,
     },
     grid: {
-        // marginLeft: theme.spacing(5),
+        marginLeft: theme.spacing(2),
     }
 }));
 

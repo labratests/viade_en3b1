@@ -24,7 +24,7 @@ const MisRutas = () => {
                 onClick={handleToggle}
                 color="inherit"
             >
-                Mis Rutas
+                My Routes
             </Button>
             <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                 {({ TransitionProps, placement }) => (
@@ -39,14 +39,14 @@ const MisRutas = () => {
                                     <ListItemIcon>
                                         <ListIcon />
                                     </ListItemIcon>
-                                    <Typography>Ver Rutas</Typography>
+                                    <Typography>See routes</Typography>
                                 </MenuItem>
 
                                 <MenuItem onClick={event =>  window.location.href='#/newRoute'}>
                                     <ListItemIcon>
                                         <EditLocationIcon />
                                     </ListItemIcon>
-                                    <Typography>Crear nueva</Typography>
+                                    <Typography>Create new</Typography>
                                 </MenuItem>
 
                             </MenuList>
