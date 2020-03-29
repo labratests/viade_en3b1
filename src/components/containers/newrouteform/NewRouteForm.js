@@ -22,7 +22,7 @@ import { withStyles } from '@material-ui/styles';
 export class NewRouteForm extends Component {
 
     state = {
-        activeStep: 0,
+        activeStep: 2,
         name: '',
         description: '',
         date: new Date(),
@@ -33,12 +33,12 @@ export class NewRouteForm extends Component {
 
     handleNext = () => {
         const { activeStep } = this.state;
-        this.setState({ activeStep: activeStep  + 1 });
+        this.setState({ activeStep: activeStep + 1 });
     };
 
     handleBack = () => {
         const { activeStep } = this.state;
-        this.setState({ activeStep: activeStep  - 1 });
+        this.setState({ activeStep: activeStep - 1 });
     };
 
     handleChange = input => e => {
@@ -49,7 +49,7 @@ export class NewRouteForm extends Component {
         this.setState({ date: date });
     }
 
-    handleMediaChange = (selectorFiles : FileList, code) => { // this is not an error, is TypeScript
+    handleMediaChange = (selectorFiles: FileList, code) => { // this is not an error, is TypeScript
         switch (code) {
             case 0: // photos
                 this.setState({ photos: selectorFiles });
@@ -57,7 +57,7 @@ export class NewRouteForm extends Component {
             case 1: // videos
                 this.setState({ videos: selectorFiles });
                 break;
-            default: 
+            default:
                 alert('Invalid media code!!');
                 console.log(code)
                 break;
@@ -103,15 +103,15 @@ export class NewRouteForm extends Component {
                                     <SuccessForm />
                                 ) : (
                                         <React.Fragment>
-                                            {getStepContent(activeStep, 
-                                                            values,
-                                                            this.handleNext,
-                                                            this.handleBack,
-                                                            this.handleChange,
-                                                            this.handleDateChange,
-                                                            this.handleMediaChange,
-                                                            this.handleMapPoints
-                                                            )}
+                                            {getStepContent(activeStep,
+                                                values,
+                                                this.handleNext,
+                                                this.handleBack,
+                                                this.handleChange,
+                                                this.handleDateChange,
+                                                this.handleMediaChange,
+                                                this.handleMapPoints
+                                            )}
 
                                         </React.Fragment>
                                     )}
@@ -129,22 +129,26 @@ const steps = ['Basic data', 'Map', 'Review your route'];
 function getStepContent(step, values, handleNext, handleBack, handleChange, handleDateChange, handleMediaChange, handleMapPoints) {
     switch (step) {
         case 0:
-            return <DataForm 
-                        handleNext={handleNext}
-                        handleChange={handleChange}
-                        handleDateChange={handleDateChange}
-                        handleMediaChange={handleMediaChange}
-                        values={values}
-                        />;
+            return <DataForm
+                handleNext={handleNext}
+                handleChange={handleChange}
+                handleDateChange={handleDateChange}
+                handleMediaChange={handleMediaChange}
+                values={values}
+            />;
         case 1:
             return <MapForm
-                        handleNext={handleNext} 
-                        handleBack={handleBack}
-                        handleMapPoints={handleMapPoints}
-                        values={values}
-                        />;
+                handleNext={handleNext}
+                handleBack={handleBack}
+                handleMapPoints={handleMapPoints}
+                values={values}
+            />;
         case 2:
-            return <ReviewForm />;
+            return <ReviewForm
+                handleNext={handleNext}
+                handleBack={handleBack}
+                values={values}
+            />;
         case 3:
             return <SuccessForm />;
         default:

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Map, Polyline, TileLayer, Marker } from 'react-leaflet';
 
-export class EditableMap extends React.Component {
+export class EditableMap extends Component {
 
     constructor() {
 		super();
