@@ -1,15 +1,12 @@
 import {Route, Media, Comment, RouteElement} from './entities/*';
 import { fromRDF } from 'jsonld';
-import {loadFromPod} from 'LoadFromPod.ts';
+import {loadFromPod} from 'LoadFromPod.js';
 
 class ParseRDFToRoute{
     
-    constructor(url){
-        this.file=loadFromPod.loadFile(url);
-    }
-
-    parse(){       
+    parse(url){       
         
+        this.file=loadFromPod.loadFile(url);
         
         var jsonRoute = JSON.parse( fromRDF(this.file) );
 
