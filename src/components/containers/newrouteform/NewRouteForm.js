@@ -49,7 +49,7 @@ export class NewRouteForm extends Component {
         this.setState({ date: date });
     }
 
-    handleMediaChange = (selectorFiles : FileList, code) => {
+    handleMediaChange = (selectorFiles : FileList, code) => { // this is not an error, is TypeScript
         switch (code) {
             case 0: // photos
                 this.setState({ photos: selectorFiles });
