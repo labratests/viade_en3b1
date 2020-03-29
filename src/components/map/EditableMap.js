@@ -23,12 +23,11 @@ export class EditableMap extends Component {
 	}
 
 	removePoint = (event) => {
-		if (event.originalEvent.key === 'Backspace') {
-			var id = event.target.options.marker_index;
-			const { points } = this.state;
-			points.splice(id, 1);
-			this.setState({ points: points.slice() });
-		}
+        var id = event.target.options.marker_index;
+        const { points } = this.state;
+        points.splice(id, 1);
+        this.setState({ points: points.slice() });
+
 	}
     
     getTrackPoints() {
@@ -59,7 +58,7 @@ export class EditableMap extends Component {
                             position={position}
                             draggable={true}
                             ondrag={this.updatePoint}
-                            onkeydown={this.removePoint}
+                            onclick={this.removePoint}
                         >
                         </Marker>
                     )}
