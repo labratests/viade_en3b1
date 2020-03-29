@@ -8,7 +8,7 @@ const parser = new ParseRDFToRoute();
 
 class LoadFromPod{
 
-    loadAll(){
+    loadAll(user){
         var userWebId = useWebId();
         var viadeRoutes = userWebId.substring(0, userWebId.length - 16) + "/public/viade/routes";
         var files = [];
@@ -18,7 +18,7 @@ class LoadFromPod{
         }
 
         files.forEach(file => {
-            parser.parse(file);
+            user.addRoute(parser.parse(file));
         });
     }
 

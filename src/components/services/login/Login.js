@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import { LoggedIn, LoggedOut } from '@solid/react';
-
+import UsersManager from '../../entities/UsersManager.js';
 
 const auth = require('solid-auth-client');
 
@@ -14,6 +14,9 @@ export class Login extends React.Component {
             session = await auth.popupLogin({ popupUri });
         }
 
+        if(session){
+            UsersManager.createUserAndLoadRoutes(`${session.webId}`);
+        }
         return (`${session.webId}`); // example of getting user's name. returns something like: "https://pablocanalsuarez.solid.community/profile/card#me"
     };
 
