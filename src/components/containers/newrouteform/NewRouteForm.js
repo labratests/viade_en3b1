@@ -22,7 +22,7 @@ import { withStyles } from '@material-ui/styles';
 export class NewRouteForm extends Component {
 
     state = {
-        activeStep: 0,
+        activeStep: 1,
         name: '',
         description: '',
         date: new Date(),
@@ -132,7 +132,11 @@ function getStepContent(step, values, handleNext, handleBack, handleChange, hand
                         values={values}
                         />;
         case 1:
-            return <MapForm />;
+            return <MapForm
+                        handleNext={handleNext} 
+                        handleBack={handleBack}
+                        values={values}
+                        />;
         case 2:
             return <ReviewForm />;
         case 3:

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function MapForm() {
-    return (
-        <div>
-            
-        </div>
-    )
+export class MapForm extends Component {
+    render() {
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 
 export default MapForm
+
