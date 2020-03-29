@@ -76,6 +76,6 @@ const useStyles = makeStyles(theme => ({
     menu: {
       width: 150,
     }
-  }));
+}));
 
 export default MisRutas

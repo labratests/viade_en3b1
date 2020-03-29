@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react'
+import { makeStyles, MuiThemeProvider } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -15,104 +15,111 @@ import Avatar from '@material-ui/core/Avatar';
 import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import FilterHdrIcon from '@material-ui/icons/FilterHdr';
 import Grid from '@material-ui/core/Grid';
+import SuccessForm from '../stepper/success/SuccessForm';
+import { withStyles } from '@material-ui/styles';
 
-const NewRouteForm = () => {
-    const classes = useStyles();
-    const [activeStep, setActiveStep] = React.useState(0);
 
-    const handleNext = () => {
-        setActiveStep(activeStep + 1);
+export class NewRouteForm extends Component {
+
+    state = {
+        activeStep: 0,
+        name: '',
+        description: '',
+        date: new Date(),
+        photos: [],
+        videos: [],
+        // more: map...
+    }
+
+    handleNext = () => {
+        const { activeStep } = this.state;
+        this.setState({ activeStep: activeStep  + 1 });
     };
 
-    const handleBack = () => {
-        setActiveStep(activeStep - 1);
+    handleBack = () => {
+        const { activeStep } = this.state;
+        this.setState({ activeStep: activeStep  - 1 });
     };
 
-    return (
-        <React.Fragment>
-            <NavBar />
-            <main className={classes.layout}>
-                <Paper className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <FilterHdrIcon fontSize="large" />
-                    </Avatar>
+    handleChange = input => e => {
+        this.setState({[input]: e.target.value});
+        console.log(this.state)
+    }
 
-                    <Typography component="h1" variant="h4" align="center">
-                        Create your own route
+    render() {
+
+        const { activeStep } = this.state;
+        const { name, description, date, photos, videos } = this.state;
+        const values = { activeStep, name, description, date, photos, videos };
+
+        const { classes } = this.props;
+
+        return (
+            <MuiThemeProvider>
+                <React.Fragment>
+                    <NavBar />
+                    <main className={classes.layout}>
+                        <Paper className={classes.paper}>
+                            <Avatar className={classes.avatar}>
+                                <FilterHdrIcon fontSize="large" />
+                            </Avatar>
+
+                            <Typography component="h1" variant="h4" align="center">
+                                Create your own route
                     </Typography>
 
-                    <Stepper activeStep={activeStep} className={classes.stepper}>
-                        {steps.map((label) => (
-                            <Step key={label}>
-                                <StepLabel>{label}</StepLabel>
-                            </Step>
-                        ))}
-                    </Stepper>
+                            <Stepper activeStep={activeStep} className={classes.stepper}>
+                                {steps.map((label) => (
+                                    <Step key={label}>
+                                        <StepLabel>{label}</StepLabel>
+                                    </Step>
+                                ))}
+                            </Stepper>
 
-                    <React.Fragment>
-                        {activeStep === steps.length ? (
                             <React.Fragment>
-                                <Grid container className={classes.grid}>
-                                    <Grid item xs={12} sm={2}>
-                                        <DirectionsWalkIcon className={classes.icon} fontSize="large" style={{ fill: "orange" }} />
-                                    </Grid>
-                                    <Grid>
-                                        <Grid item xs={12} sm={6}>
-                                            <Typography variant="h5" gutterBottom>
-                                                Route created
-                                            </Typography>
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <Typography variant="subtitle1">
-                                                Your new track was succesfully created and saved
-                                            </Typography>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
+                                {activeStep === steps.length ? (
+                                    <SuccessForm />
+                                ) : (
+                                        <React.Fragment>
+                                            {getStepContent(activeStep, 
+                                                            this.handleNext,
+                                                            this.handleBack,
+                                                            this.handleChange,
+                                                            values)}
+
+                                        </React.Fragment>
+                                    )}
                             </React.Fragment>
-                        ) : (
-                                <React.Fragment>
-                                    {getStepContent(activeStep)}
-                                    <div className={classes.buttons}>
-                                        {activeStep !== 0 && (
-                                            <Button onClick={handleBack} className={classes.button}>
-                                                Back
-                                            </Button>
-                                        )}
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            onClick={handleNext}
-                                            className={classes.button}
-                                        >
-                                            {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
-                                        </Button>
-                                    </div>
-                                </React.Fragment>
-                            )}
-                    </React.Fragment>
-                </Paper>
-            </main>
-        </React.Fragment>
-    )
+                        </Paper>
+                    </main>
+                </React.Fragment>
+            </MuiThemeProvider>
+        )
+    }
 }
 
 const steps = ['Basic data', 'Map', 'Review your route'];
 
-function getStepContent(step) {
+function getStepContent(step, handleNext, handleBack, handleChange, values) {
     switch (step) {
         case 0:
-            return <DataForm />;
+            return <DataForm 
+                        handleNext={handleNext}
+                        handleChange={handleChange}
+                        values={values}
+                        />;
         case 1:
             return <MapForm />;
         case 2:
             return <ReviewForm />;
+        case 3:
+            return <SuccessForm />;
         default:
             throw new Error('Unknown step');
     }
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = theme => ({
     layout: {
         width: 'auto',
         marginLeft: theme.spacing(2),
@@ -156,6 +163,6 @@ const useStyles = makeStyles((theme) => ({
     grid: {
         marginLeft: theme.spacing(2),
     }
-}));
+});
 
-export default NewRouteForm
+export default withStyles(useStyles)(NewRouteForm);
