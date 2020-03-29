@@ -44,6 +44,7 @@ export class DataForm extends Component {
                                 name="name"
                                 label="Name"
                                 fullWidth
+                                defaultValue={values.name}
                                 autoComplete="routename"
                                 onChange={handleChange('name')}
                             />
@@ -75,6 +76,7 @@ export class DataForm extends Component {
                                 label="Description"
                                 multiline
                                 fullWidth
+                                defaultValue={values.description}
                                 rows="4"
                                 variant="outlined"
                                 onChange={handleChange('description')}
@@ -86,6 +88,7 @@ export class DataForm extends Component {
                                 style={{ display: 'none' }}
                                 id="media-photo"
                                 multiple
+                                defaultValue={values.photos}
                                 type="file"
                                 onChange={(e) => this.handleMediaChange(e.target.files, 0)} //photos
                             />
@@ -101,6 +104,7 @@ export class DataForm extends Component {
                                 style={{ display: 'none' }}
                                 id="media-video"
                                 multiple
+                                defaultValue={values.videos}
                                 type="file"
                                 onChange={(e) => this.handleMediaChange(e.target.files, 1)} //videos
                             />

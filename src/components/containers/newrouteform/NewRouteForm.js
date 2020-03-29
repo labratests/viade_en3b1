@@ -22,14 +22,14 @@ import { withStyles } from '@material-ui/styles';
 export class NewRouteForm extends Component {
 
     state = {
-        activeStep: 1,
+        activeStep: 0,
         name: '',
         description: '',
         date: new Date(),
         photos: [],
         videos: [],
-        // more: map...
-    }
+        points: []
+    };
 
     handleNext = () => {
         const { activeStep } = this.state;
@@ -62,6 +62,10 @@ export class NewRouteForm extends Component {
                 console.log(code)
                 break;
         }
+    }
+
+    handleMapPoints = points => {
+        this.setState({ points: points })
     }
 
     render() {
@@ -105,7 +109,8 @@ export class NewRouteForm extends Component {
                                                             this.handleBack,
                                                             this.handleChange,
                                                             this.handleDateChange,
-                                                            this.handleMediaChange
+                                                            this.handleMediaChange,
+                                                            this.handleMapPoints
                                                             )}
 
                                         </React.Fragment>
@@ -121,7 +126,7 @@ export class NewRouteForm extends Component {
 
 const steps = ['Basic data', 'Map', 'Review your route'];
 
-function getStepContent(step, values, handleNext, handleBack, handleChange, handleDateChange, handleMediaChange) {
+function getStepContent(step, values, handleNext, handleBack, handleChange, handleDateChange, handleMediaChange, handleMapPoints) {
     switch (step) {
         case 0:
             return <DataForm 
@@ -135,6 +140,7 @@ function getStepContent(step, values, handleNext, handleBack, handleChange, hand
             return <MapForm
                         handleNext={handleNext} 
                         handleBack={handleBack}
+                        handleMapPoints={handleMapPoints}
                         values={values}
                         />;
         case 2:
