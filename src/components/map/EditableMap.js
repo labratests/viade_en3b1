@@ -6,11 +6,18 @@ export class EditableMap extends Component {
     constructor() {
 		super();
         this.state = { points: [] };
+        this.firstPoint = true;
+        
 	}
 
     addPoint = (e) => {
 		this.state.points.push(e.latlng);
-		this.setState({ points: this.state.points.slice() });
+        this.setState({ points: this.state.points.slice() });
+        
+        if(this.firstPoint == true) {
+            this.props.handleClick();
+            this.firstPoint = false;
+        }
     }
 
     updatePoint = (event) => {

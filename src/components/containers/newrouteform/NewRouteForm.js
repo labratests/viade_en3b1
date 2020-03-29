@@ -22,7 +22,7 @@ import { withStyles } from '@material-ui/styles';
 export class NewRouteForm extends Component {
 
     state = {
-        activeStep: 2,
+        activeStep: 1,
         name: '',
         description: '',
         date: new Date(),

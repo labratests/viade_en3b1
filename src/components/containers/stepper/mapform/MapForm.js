@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
 import EditableMap from '../../../map/EditableMap'
-import { Button, Typography, Grid } from '@material-ui/core'
+import { Button, Typography, Grid, Snackbar, IconButton } from '@material-ui/core'
+import CloseIcon from '@material-ui/icons/Close';
 
 export class MapForm extends Component {
 
     constructor() {
-		super();
+        super();
         this.points = React.createRef();
-	}
+        this.state = {
+            open: false,
+            vertical: 'top',
+            horizontal: 'center',
+        }
+    }
 
     next = e => {
         e.preventDefault();
-        if(this.points.current.getTrackPoints() === 'undefined' || this.points.current.getTrackPoints().length == 0){
+        if (this.points.current.getTrackPoints() === 'undefined' || this.points.current.getTrackPoints().length == 0) {
             alert('You must select at least one track point!!');
             return;
         }
@@ -24,16 +30,44 @@ export class MapForm extends Component {
         this.props.handleBack();
     }
 
+    handleClick = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
+
     render() {
+        const { open } = this.state;
+        const { vertical, horizontal } = this.state;
+
         return (
             <React.Fragment>
+                <Snackbar
+                    anchorOrigin={{ vertical, horizontal }}
+                    open={open}
+                    message="You can move a point by dragging it and delete it just clicking on it"
+                    action={
+                        <React.Fragment>
+                            <IconButton
+                                aria-label="close"
+                                color="inherit"
+                                onClick={this.handleClose}
+                            >
+                                <CloseIcon />
+                            </IconButton>
+                        </React.Fragment>
+                    }
+                />
                 <Typography variant="h6" gutterBottom>
                     Click on the map to add trackpoints to your route
                 </Typography>
-                <form onSubmit={this.next}>
-                    <EditableMap ref={this.points} />
 
-                    <Grid container spacing={3} style={{marginTop: 12}}>
+                <form onSubmit={this.next}>
+                    <EditableMap ref={this.points} handleClick={this.handleClick} />
+
+                    <Grid container spacing={3} style={{ marginTop: 12 }}>
                         <Button
                             variant="contained"
                             color="default"
