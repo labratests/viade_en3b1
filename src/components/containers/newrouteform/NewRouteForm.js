@@ -42,8 +42,26 @@ export class NewRouteForm extends Component {
     };
 
     handleChange = input => e => {
-        this.setState({[input]: e.target.value});
-        console.log(this.state)
+        this.setState({ [input]: e.target.value });
+    }
+
+    handleDateChange = date => {
+        this.setState({ date: date });
+    }
+
+    handleMediaChange = (selectorFiles : FileList, code) => {
+        switch (code) {
+            case 0: // photos
+                this.setState({ photos: selectorFiles });
+                break;
+            case 1: // videos
+                this.setState({ videos: selectorFiles });
+                break;
+            default: 
+                alert('Invalid media code!!');
+                console.log(code)
+                break;
+        }
     }
 
     render() {
@@ -82,10 +100,13 @@ export class NewRouteForm extends Component {
                                 ) : (
                                         <React.Fragment>
                                             {getStepContent(activeStep, 
+                                                            values,
                                                             this.handleNext,
                                                             this.handleBack,
                                                             this.handleChange,
-                                                            values)}
+                                                            this.handleDateChange,
+                                                            this.handleMediaChange
+                                                            )}
 
                                         </React.Fragment>
                                     )}
@@ -100,12 +121,14 @@ export class NewRouteForm extends Component {
 
 const steps = ['Basic data', 'Map', 'Review your route'];
 
-function getStepContent(step, handleNext, handleBack, handleChange, values) {
+function getStepContent(step, values, handleNext, handleBack, handleChange, handleDateChange, handleMediaChange) {
     switch (step) {
         case 0:
             return <DataForm 
                         handleNext={handleNext}
                         handleChange={handleChange}
+                        handleDateChange={handleDateChange}
+                        handleMediaChange={handleMediaChange}
                         values={values}
                         />;
         case 1:

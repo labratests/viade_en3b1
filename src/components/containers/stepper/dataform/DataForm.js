@@ -14,8 +14,7 @@ export class DataForm extends Component {
     // const [selectedDate, setSelectedDate] = React.useState(new Date());
 
     handleDateChange = date => {
-        this.props.handleChange('date');
-        console.log("FECHA: "+date);
+        this.props.handleDateChange(date);
     };
 
     next = e => {
@@ -23,14 +22,19 @@ export class DataForm extends Component {
         this.props.handleNext();
     }
 
+    handleMediaChange = (selectorFiles : FileList, code) => {
+        this.props.handleMediaChange(selectorFiles, code);
+    }
+
     render() {
+        
         const { values, handleChange } = this.props;
 
         return (
             <React.Fragment>
                 <Typography variant="h6" gutterBottom>
                     Please, introduce the following data for your new route
-              </Typography>
+                </Typography>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6} style={{ marginTop: 16 }}>
                         <TextField
@@ -54,7 +58,7 @@ export class DataForm extends Component {
                                 format="MM/dd/yyyy"
                                 margin="normal"
                                 label="Date"
-                                // value={selectedDate}
+                                value={values.date}
                                 onChange={this.handleDateChange}
                                 KeyboardButtonProps={{
                                     'aria-label': 'date',
@@ -82,7 +86,7 @@ export class DataForm extends Component {
                             id="media-photo"
                             multiple
                             type="file"
-                            onChange={handleChange('photos')}
+                            onChange={(e) => this.handleMediaChange(e.target.files, 0)} //photos
                         />
                         <label htmlFor="media-photo">
                             <Button variant="contained" color="default" component="span" startIcon={<AddAPhotoIcon />}>
@@ -97,7 +101,7 @@ export class DataForm extends Component {
                             id="media-video"
                             multiple
                             type="file"
-                            onChange={handleChange('videos')}
+                            onChange={(e) => this.handleMediaChange(e.target.files, 1)} //videos
                         />
                         <label htmlFor="media-video">
                             <Button variant="contained" color="default" component="span" startIcon={<CloudUploadIcon />}>
