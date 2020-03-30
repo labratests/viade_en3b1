@@ -14,7 +14,6 @@ export default class MapSnapshot extends Component {
       <Map bounds={this.points} doubleClickZoom={false} dragging={false} keyboard={false}
        scrollWheelZoom={false} tap={false} touchZoom={false} zoomControl={false} boxZoom={false}>
         <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Polyline   positions={data.features.map(point => (

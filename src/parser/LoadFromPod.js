@@ -28,4 +28,4 @@ class LoadFromPod{
     
 }
 
-let loadFromPod = new LoadFromPod();
+export default LoadFromPod;
