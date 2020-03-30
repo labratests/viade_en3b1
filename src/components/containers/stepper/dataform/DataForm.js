@@ -11,8 +11,6 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 export class DataForm extends Component {
 
-    // const [selectedDate, setSelectedDate] = React.useState(new Date());
-
     handleDateChange = date => {
         this.props.handleDateChange(date);
     };

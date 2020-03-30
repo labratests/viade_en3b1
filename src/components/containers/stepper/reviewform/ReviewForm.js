@@ -103,7 +103,6 @@ export class ReviewForm extends Component {
                                 marginTop: 12,
                                 marginLeft: '1vh'
                             }}
-                            type="submit"
                             onClick={this.back}
                         >
                             Back
@@ -116,7 +115,6 @@ export class ReviewForm extends Component {
                                 marginTop: 12,
                                 marginLeft: 'auto'
                             }}
-                            type="submit"
                             onClick={this.next}
                         >
                             Next

@@ -22,7 +22,7 @@ import { withStyles } from '@material-ui/styles';
 export class NewRouteForm extends Component {
 
     state = {
-        activeStep: 1,
+        activeStep: 0,
         name: '',
         description: '',
         date: new Date(),
@@ -68,6 +68,18 @@ export class NewRouteForm extends Component {
         this.setState({ points: points })
     }
 
+    // ###########################
+    // Download and Upload methods
+    // ###########################
+
+    handleDownload = () => {
+        // download route
+    }
+
+    upload = () => {
+        // upload route
+    }
+
     render() {
 
         const { activeStep } = this.state;
@@ -88,7 +100,7 @@ export class NewRouteForm extends Component {
 
                             <Typography component="h1" variant="h4" align="center">
                                 Create your own route
-                    </Typography>
+                            </Typography>
 
                             <Stepper activeStep={activeStep} className={classes.stepper}>
                                 {steps.map((label) => (
@@ -99,22 +111,16 @@ export class NewRouteForm extends Component {
                             </Stepper>
 
                             <React.Fragment>
-                                {activeStep === steps.length ? (
-                                    <SuccessForm />
-                                ) : (
-                                        <React.Fragment>
-                                            {getStepContent(activeStep,
-                                                values,
-                                                this.handleNext,
-                                                this.handleBack,
-                                                this.handleChange,
-                                                this.handleDateChange,
-                                                this.handleMediaChange,
-                                                this.handleMapPoints
-                                            )}
-
-                                        </React.Fragment>
-                                    )}
+                                {getStepContent(activeStep,
+                                    values,
+                                    this.handleNext,
+                                    this.handleBack,
+                                    this.handleChange,
+                                    this.handleDateChange,
+                                    this.handleMediaChange,
+                                    this.handleMapPoints,
+                                    this.handleDownload
+                                )}
                             </React.Fragment>
                         </Paper>
                     </main>
@@ -126,7 +132,15 @@ export class NewRouteForm extends Component {
 
 const steps = ['Basic data', 'Map', 'Review your route'];
 
-function getStepContent(step, values, handleNext, handleBack, handleChange, handleDateChange, handleMediaChange, handleMapPoints) {
+function getStepContent(step,
+    values,
+    handleNext,
+    handleBack,
+    handleChange,
+    handleDateChange,
+    handleMediaChange,
+    handleMapPoints,
+    handleDownload) {
     switch (step) {
         case 0:
             return <DataForm
@@ -150,7 +164,9 @@ function getStepContent(step, values, handleNext, handleBack, handleChange, hand
                 values={values}
             />;
         case 3:
-            return <SuccessForm />;
+            return <SuccessForm
+                handleDownload={handleDownload}
+            />;
         default:
             throw new Error('Unknown step');
     }
