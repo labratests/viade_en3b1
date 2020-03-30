@@ -71,8 +71,8 @@ export class NewRouteForm extends Component {
     render() {
 
         const { activeStep } = this.state;
-        const { name, description, date, photos, videos } = this.state;
-        const values = { activeStep, name, description, date, photos, videos };
+        const { name, description, date, photos, videos, points } = this.state;
+        const values = { activeStep, name, description, date, photos, videos, points };
 
         const { classes } = this.props;
 

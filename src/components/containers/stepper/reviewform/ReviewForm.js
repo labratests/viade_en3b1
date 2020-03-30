@@ -13,6 +13,14 @@ export class ReviewForm extends Component {
         this.props.handleBack();
     }
 
+    getPointsText(points){
+        var pointsText = "";
+
+        points.forEach(p => pointsText += "Lat: "+p.lat+"\tLong: "+p.lng+"\n");
+
+        return pointsText;
+    }
+
     render() {
 
         const { values } = this.props;
@@ -23,9 +31,8 @@ export class ReviewForm extends Component {
 
         const date = month + "/" + day + "/" + year;
 
-        const points = values.points;
-
-        // points.forEach( p => console.log(p))
+        const { points } = values;
+        
 
         return (
             <div>
@@ -81,7 +88,7 @@ export class ReviewForm extends Component {
                                 label="Track Points"
                                 multiline
                                 fullWidth
-                                defaultValue={values.points}
+                                defaultValue={this.getPointsText(values.points)}
                                 rows="4"
                                 variant="filled"
                             />
@@ -110,6 +117,7 @@ export class ReviewForm extends Component {
                                 marginLeft: 'auto'
                             }}
                             type="submit"
+                            onClick={this.next}
                         >
                             Next
                         </Button>
