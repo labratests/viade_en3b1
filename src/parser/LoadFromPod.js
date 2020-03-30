@@ -13,12 +13,12 @@ class LoadFromPod{
         var files = [];
 
         if(fc.itemExists(viadeRoutes)){
-            files = fc.readFolder(viadeRoutes);
+            files = fc.readFolder(viadeRoutes).files;
         }
 
-        for (const file of files) {
+        files.forEach(file => {
             user.addRoute(parser.parse(file));
-          }
+        });
     }
 
     async loadFile(url){
