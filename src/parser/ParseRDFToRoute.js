@@ -1,21 +1,19 @@
 import {Route, Media, Comment, RouteElement} from './entities/*';
 import { fromRDF } from 'jsonld';
-import {loadFromPod} from 'LoadFromPod.ts';
+import {loadFromPod} from 'LoadFromPod.js';
 
 class ParseRDFToRoute{
     
-    constructor(url){
-        this.file=loadFromPod.loadFile(url);
-    }
-
-    parse(){       
+    parse(url){       
         
+        this.file=loadFromPod.loadFile(url);
         
         var jsonRoute = JSON.parse( fromRDF(this.file) );
 
         var name = "";
         var description = "";
         var date = "";
+        var time = "";
         var routeElements = [];
         var comments = [];
         var media = [];
@@ -23,6 +21,7 @@ class ParseRDFToRoute{
         name = jsonRoute.getString("Name");
         description = jsonRoute.getString("Description");
         date = jsonRoute.getString("Date");
+        time = jsonRoute.getString("Time");
 
         var jsonArray = jsonRoute.getJSONArray("elements");
         var element = new RouteElement("", 0, 0, 0);
@@ -52,7 +51,7 @@ class ParseRDFToRoute{
         });
 
         
-        return new Route(name, date, description, routeElements, comments, media);
+        return new Route(name, date, time, description, routeElements, comments, media);
 
     }
 

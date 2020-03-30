@@ -1,0 +1,42 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import MapSnapshot from '../map/MapSnapshot.js'
+
+const useStyles = makeStyles({
+    root: {
+      minWidth: 275,
+    },
+    pos: {
+      marginBottom: 12,
+      marginTop: 12,
+    },
+  });
+
+export default function MyRouteCard(props) {
+  const classes = useStyles();
+
+  return (
+    <Card elevation={5} className={classes.root}>
+      <CardContent>
+        <Typography variant="h5" component="h2">
+          Route Name: {props.route.name}
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          Date: {props.route.date}
+        </Typography>
+        <Typography variant="h5" component="h2">
+          <MapSnapshot></MapSnapshot>
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          Distance: {props.route.totalDistance}
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          Time: {props.route.time}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+}
