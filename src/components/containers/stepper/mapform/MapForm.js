@@ -10,6 +10,7 @@ export class MapForm extends Component {
         this.points = React.createRef();
         this.state = {
             open: false,
+            message: "",
             vertical: 'top',
             horizontal: 'center',
         }
@@ -18,7 +19,8 @@ export class MapForm extends Component {
     next = e => {
         e.preventDefault();
         if (this.points.current.getTrackPoints() === 'undefined' || this.points.current.getTrackPoints().length == 0) {
-            alert('You must select at least one track point!!');
+            // alert('You must select at least one track point!!');
+            this.handleClick("You must select at least one track point!!");
             return;
         }
         this.props.handleNext();
@@ -30,8 +32,9 @@ export class MapForm extends Component {
         this.props.handleBack();
     }
 
-    handleClick = () => {
-        this.setState({ open: true });
+    handleClick = (text) => {
+        this.setState({ open: true,
+                        message: text });
     };
 
     handleClose = () => {
@@ -39,7 +42,7 @@ export class MapForm extends Component {
     };
 
     render() {
-        const { open } = this.state;
+        const { open, message } = this.state;
         const { vertical, horizontal } = this.state;
 
         return (
@@ -47,7 +50,7 @@ export class MapForm extends Component {
                 <Snackbar
                     anchorOrigin={{ vertical, horizontal }}
                     open={open}
-                    message="You can move a point by dragging it and delete it just clicking on it"
+                    message={message}
                     action={
                         <React.Fragment>
                             <IconButton

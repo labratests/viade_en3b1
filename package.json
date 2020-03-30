@@ -27,7 +27,8 @@
     "shx": "0.3.2",
     "solid": "^0.2.1",
     "solid-auth-client": "^2.4.1",
-    "typeface-roboto": "0.0.75"
+    "typeface-roboto": "0.0.75",
+    "uuid": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -15,7 +15,7 @@ export class EditableMap extends Component {
         this.setState({ points: this.state.points.slice() });
         
         if(this.firstPoint == true) {
-            this.props.handleClick();
+            this.props.handleClick("You can move a point by dragging it and delete it just clicking on it");
             this.firstPoint = false;
         }
     }
