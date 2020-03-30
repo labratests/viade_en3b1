@@ -3,8 +3,8 @@ import { Map, TileLayer, Marker, Popup,Polyline } from 'react-leaflet';
 import * as data from "../../demoData/demoRoute.json";
 
 export default class MapSnapshot extends Component {
-  points = data.features.map(point => (
-    [point.geometry.coordinates[0],point.geometry.coordinates[1]]
+  points = this.props.route.getRouteElements().map(point => (
+    [point.getLatitude(),point.getLongitude()]
     ));
   
   setPopup = () =>{}
@@ -16,9 +16,7 @@ export default class MapSnapshot extends Component {
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Polyline   positions={data.features.map(point => (
-          [point.geometry.coordinates[0],point.geometry.coordinates[1]]
-          ))} color='blue'/>
+        <Polyline   positions={this.points} color='blue'/>
         ))}
       </Map>
     )
