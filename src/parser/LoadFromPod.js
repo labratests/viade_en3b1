@@ -7,13 +7,13 @@ const parser = new ParseRDFToRoute();
 
 class LoadFromPod{
 
-    loadAll(user){
+    async loadAll(user){
         var userWebId = user.toString();
         var viadeRoutes = userWebId.slice(0, userWebId.length - 16) + "/public/viade/routes";
         var files = [];
 
-        if(fc.itemExists(viadeRoutes)){
-            files = fc.readFolder(viadeRoutes).files;
+        if(await fc.itemExists(viadeRoutes)){
+            files = await fc.readFolder(viadeRoutes).files;
         }
 
         files.forEach(file => {
