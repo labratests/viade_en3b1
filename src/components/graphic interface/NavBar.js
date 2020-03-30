@@ -4,11 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Login from "../services/login/Login.js";
-import { LoggedOut, LoggedIn } from '@solid/react';
-import {Link} from '@material-ui/core';
 import { LoggedOut } from '@solid/react';
-import Dashboard from '../services/dashboard/Dashboard.js';
-import ListRoutes from '../services/routes/ListRoutes';
 import { Link } from '@material-ui/core';
 import "typeface-roboto";
 import MisRutas from './MisRutas.js';
@@ -20,24 +16,16 @@ const NavBar = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar >
-          <LoggedIn><Link underline='none' color='inherit' href={'#/dashboard'} className={classes.title}>Viade</Link></LoggedIn>
-          <LoggedOut><Link underline='none' color='inherit' href={'#/welcome'} className={classes.title}>Viade</Link></LoggedOut>
+          <Link underline='none' color='inherit' href={'#/welcome'} className={classes.title}>Viade</Link>
 
-    return(
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Toolbar >
-                    <Link underline='none' color='inherit' href={'#/welcome'} className={classes.title}>Viade</Link>
-                    <ListRoutes className={classes.menuButton}/>
-                    <MisRutas></MisRutas>
-                    <Dashboard className={classes.menuButton}/>
-                    <LoggedOut><Button className={classes.menuButton} href={"#/register"} color="inherit">Sign up</Button></LoggedOut>
-                    <Login/>
-                </Toolbar>
-            </AppBar>
-        </div>
-    )
-          
+          <MisRutas></MisRutas>
+          <LoggedOut><Button className={classes.menuButton} href={"#/register"} color="inherit">Sign up</Button></LoggedOut>
+          <Login />
+        </Toolbar>
+      </AppBar>
+    </div>
+  )
+
 }
 
 const useStyles = makeStyles(theme => ({

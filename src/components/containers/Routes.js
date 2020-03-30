@@ -14,8 +14,7 @@ const Routes = () => (
         <Route exact path="/404" component={PageNotFound} />
         <Redirect exact from="/" to="/welcome" />
         <Route exact path="/welcome" component={Welcome} />
-        <Route exact path="/myroutes" component={UserRoutes}/>
-        <Route exact path="/dashboard" component={Main} />
+        <Route exact path="/dashboard" component={UserRoutes} />
         <Route exact path="/register" component={Register}/>
         <Route exact path="/newRoute" component={NewRouteForm}/>
         <Redirect to="/404" />
