@@ -20,6 +20,14 @@ import { withStyles } from '@material-ui/styles';
 import Route from '../../../entities/Route';
 import { uploadMedia, uploadRoute } from '../../../parser/UploadToPod';
 
+import auth from 'solid-auth-client';
+
+async function log(){
+    let session = await auth.currentSession();
+    let webId = session.webId.split("profile")[0];
+    console.log(webId)
+}
+
 export class NewRouteForm extends Component {
 
     constructor() {
@@ -84,8 +92,7 @@ export class NewRouteForm extends Component {
     }
 
     upload = () => {
-        
-        uploadMedia(this.route.getMedia());
+        // uploadMedia(this.route.getMedia());
         uploadRoute(this.route);
     }
 
@@ -98,6 +105,8 @@ export class NewRouteForm extends Component {
         Array.from(videos).forEach(p => media.push(p));
 
         this.route = new Route(name, date, description, points, comments, media);
+        
+        this.upload();
     }
 
     render() {
