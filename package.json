@@ -27,6 +27,7 @@
     "shx": "0.3.2",
     "solid": "^0.2.1",
     "solid-auth-client": "^2.4.1",
+    "solid-file-client": "^1.0.2",
     "typeface-roboto": "0.0.75",
     "uuid": "^7.0.2"
   },

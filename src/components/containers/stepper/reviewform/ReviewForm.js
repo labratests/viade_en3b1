@@ -5,6 +5,7 @@ export class ReviewForm extends Component {
 
     next = e => {
         e.preventDefault();
+        this.props.createRoute();
         this.props.handleNext();
     }
 
@@ -29,10 +30,7 @@ export class ReviewForm extends Component {
         var day = values.date.getUTCDate();
         var year = values.date.getUTCFullYear();
 
-        const date = month + "/" + day + "/" + year;
-
-        const { points } = values;
-        
+        const date = month + "/" + day + "/" + year;        
 
         return (
             <div>

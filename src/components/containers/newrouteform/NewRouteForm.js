@@ -17,19 +17,26 @@ import FilterHdrIcon from '@material-ui/icons/FilterHdr';
 import Grid from '@material-ui/core/Grid';
 import SuccessForm from '../stepper/success/SuccessForm';
 import { withStyles } from '@material-ui/styles';
-
+import Route from '../../../entities/Route';
+import { uploadMedia, uploadRoute } from '../../../parser/UploadToPod';
 
 export class NewRouteForm extends Component {
 
-    state = {
-        activeStep: 0,
-        name: '',
-        description: '',
-        date: new Date(),
-        photos: [],
-        videos: [],
-        points: []
-    };
+    constructor() {
+
+        super();
+        this.route = null;
+
+        this.state = {
+            activeStep: 0,
+            name: '',
+            description: '',
+            date: new Date(),
+            photos: [],
+            videos: [],
+            points: []
+        };
+    }
 
     handleNext = () => {
         const { activeStep } = this.state;
@@ -77,7 +84,20 @@ export class NewRouteForm extends Component {
     }
 
     upload = () => {
-        // upload route
+        
+        uploadMedia(this.route.getMedia());
+        uploadRoute(this.route);
+    }
+
+    createRoute = () => {
+        const { name, description, date, photos, videos, points } = this.state;
+        let comments = undefined;
+        let media = [];
+
+        Array.from(photos).forEach(p => media.push(p));
+        Array.from(videos).forEach(p => media.push(p));
+
+        this.route = new Route(name, date, description, points, comments, media);
     }
 
     render() {
@@ -119,7 +139,8 @@ export class NewRouteForm extends Component {
                                     this.handleDateChange,
                                     this.handleMediaChange,
                                     this.handleMapPoints,
-                                    this.handleDownload
+                                    this.handleDownload,
+                                    this.createRoute
                                 )}
                             </React.Fragment>
                         </Paper>
@@ -140,7 +161,8 @@ function getStepContent(step,
     handleDateChange,
     handleMediaChange,
     handleMapPoints,
-    handleDownload) {
+    handleDownload,
+    createRoute) {
     switch (step) {
         case 0:
             return <DataForm
@@ -162,6 +184,7 @@ function getStepContent(step,
                 handleNext={handleNext}
                 handleBack={handleBack}
                 values={values}
+                createRoute={createRoute}
             />;
         case 3:
             return <SuccessForm
