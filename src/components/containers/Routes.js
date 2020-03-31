@@ -5,6 +5,7 @@ import Welcome  from "./welcome/Welcome.js";
 import PageNotFound from "./pagenotfound/PageNotFound.js";
 import Register from '../services/register/Register.js';
 import UserRoutes from './routes/UserRoutes.js';
+import RouteDetails from './routes/RouteDetails.js';
 
 const Routes = () => (
   <HashRouter>
@@ -16,6 +17,7 @@ const Routes = () => (
         <Route exact path="/myroutes" component={UserRoutes}/>
         <Route exact path="/dashboard" component={Main} />
         <Route exact path="/register" component={Register}/>
+        <Route exact path="/RouteDetails/:id" component={RouteDetails}/>
         <Redirect to="/404" />
       </Switch>
     </Fragment>

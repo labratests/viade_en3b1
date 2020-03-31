@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import MapSnapshot from '../map/MapSnapshot.js'
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
     root: {
@@ -20,7 +21,7 @@ export default function MyRouteCard(props) {
   return (
     <Card elevation={5} className={classes.root}>
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography  variant="h5" component="h2">
           {props.route.name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
@@ -34,6 +35,9 @@ export default function MyRouteCard(props) {
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           Time: {props.route.time}
+        </Typography>
+        <Typography className={classes.pos} >
+          <Button className={classes.menuButton} href={"#/RouteDetails/"+props.route.name} color="inherit">Details</Button>
         </Typography>
       </CardContent>
     </Card>
