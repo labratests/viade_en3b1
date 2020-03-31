@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Popup,Polyline } from 'react-leaflet';
+import { Map, TileLayer ,Polyline } from 'react-leaflet';
 
 export default class MapSnapshot extends Component {
   points = this.props.route.getRouteElements().map(point => (
