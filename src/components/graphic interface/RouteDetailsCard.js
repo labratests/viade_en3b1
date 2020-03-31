@@ -27,14 +27,20 @@ export default function RouteDetails(props) {
                 <Typography className={classes.pos}>
                     <DetailsMap route={props.route}></DetailsMap>
                 </Typography>
-                <Typography className={classes.pos} color="textSecondary">
+                <Typography className={classes.pos} >
                     Date: {props.route.date}
                 </Typography>
-                <Typography className={classes.pos} color="textSecondary">
+                <Typography className={classes.pos} >
                     Distance: {props.route.totalDistance}
                 </Typography>
-                <Typography className={classes.pos} color="textSecondary">
+                <Typography className={classes.pos} >
                     Time: {props.route.time}
+                </Typography>
+                <Typography className={classes.pos} >
+                    Description: 
+                </Typography>
+                <Typography className={classes.pos} >
+                    {props.route.getDescription()}
                 </Typography>
             </CardContent>
         </Card>
