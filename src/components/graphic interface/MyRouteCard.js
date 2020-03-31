@@ -21,7 +21,7 @@ export default function MyRouteCard(props) {
     <Card elevation={5} className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          Route Name: {props.route.name}
+          {props.route.name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           Date: {props.route.date}
