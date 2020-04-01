@@ -1,9 +1,6 @@
 import auth from 'solid-auth-client';
 import PodHandler from './PodHandler';
 
-// const auth = require('solid-auth-client');
-
-
 export async function uploadMedia(media) {
     let session = await auth.currentSession();
     let storageHandler = new PodHandler(session);

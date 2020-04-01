@@ -18,24 +18,10 @@ import Grid from '@material-ui/core/Grid';
 import SuccessForm from '../stepper/success/SuccessForm';
 import { withStyles } from '@material-ui/styles';
 import Route from '../../../entities/Route';
-import { uploadMedia, uploadRoute } from '../../../parser/UploadToPod';
+import { uploadMedia, uploadRoute } from '../../../parser/RouteHandler';
 import MuiAlert from '@material-ui/lab/Alert';
 import CloseIcon from '@material-ui/icons/Close';
 import { Snackbar, IconButton } from '@material-ui/core';
-
-import auth from 'solid-auth-client';
-
-async function log() {
-    let session = await auth.currentSession();
-    let webId = session.webId.split("profile")[0];
-    console.log(webId)
-}
-
-// function upload(route) {
-//     return new Promise(resolve => {
-//         uploadRoute(route, response => resolve(response));
-//     });
-// }
 
 export class NewRouteForm extends Component {
 
@@ -141,7 +127,6 @@ export class NewRouteForm extends Component {
         this.route = new Route(name, date, description, points, comments, media);
 
         let statusPromise = this.upload(this.route);
-        // console.log(statusPromise.then(status => console.log(status)))
         statusPromise.then(status => this.checkSuccessCode(status))
     }
 
