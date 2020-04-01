@@ -42,6 +42,20 @@ export default function RouteDetails(props) {
                 <Typography className={classes.pos} >
                     {props.route.getDescription()}
                 </Typography>
+                <Typography className={classes.pos} >
+                    Coments: 
+                </Typography>
+                {
+                    Array.isArray(props.route.getComments()) && //is empty??
+                        props.route.getComments().map((comment)=>
+                        (
+                            <Typography className={classes.pos} >
+                                {comment}
+                            </Typography>
+                        )
+                        )
+                }
+                
             </CardContent>
         </Card>
       </Grid>

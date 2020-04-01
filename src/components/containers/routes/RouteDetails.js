@@ -17,7 +17,7 @@ const RouteDetails = () => {
       new RouteElement(1,43.363291, -5.850281,0),
       new RouteElement(1,43.362667, -5.851740,0),
       new RouteElement(1,43.364970, -5.853963,0)
-    ]));
+    ],["comentario 1", "comentario 2"]));
     fakeUser.addRoute(new Route('ruta2','15/02/2020',15,'ruta muy corta',[
       new RouteElement(1,43.556428, -5.926715,0),
       new RouteElement(1,43.557540, -5.922617,0)
