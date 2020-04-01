@@ -17,9 +17,19 @@ class PodHandler {
         this.commentsFolder = "comments/";
     }
 
-    async storeRoute(fileName, routeJson, callback = () => { }) {
+    storeRoute(fileName, routeJson, callback = () => { }) {
         let url = this.defaultFolder + this.routesFolder + fileName;
         this.storeFile(url, routeJson, callback)
+    }
+
+    storeFile(url, data, callback) {
+        let response = fc.createFile(url, data);
+        // let successCode = null;
+        response.then(
+            (response) => { callback(0); }
+            , (error) => { callback(-1); }
+        );
+        // return successCode;
     }
 
     async storeMedia(mediaList, callback = () => { }) {
@@ -41,14 +51,6 @@ class PodHandler {
 
     storeMedia(url, data, contentType, callback) {
         let response = fc.putFile(url, data, contentType);
-        response.then(
-            (response) => { callback(response.url, response); }
-            , (error) => { callback(null, error); }
-        );
-    }
-
-    storeFile(url, data, callback) {
-        let response = fc.createFile(url, data);
         response.then(
             (response) => { callback(response.url, response); }
             , (error) => { callback(null, error); }

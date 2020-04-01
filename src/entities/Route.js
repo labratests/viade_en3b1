@@ -15,7 +15,7 @@ class Route {
      * @param {String} description Description of the route.
      * @param {Array} routeElements List of RouteElement objects, which are the trackpoints.
      * @param {Array} comments List of comments
-     * @param {Array} media List of photos
+     * @param {Array<String>} media List of urls of media (on the POD)
      */
     constructor(name, date, description, routeElements, comments, media) {
         this.id = uuid().toString();

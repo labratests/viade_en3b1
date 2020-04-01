@@ -19,14 +19,23 @@ import SuccessForm from '../stepper/success/SuccessForm';
 import { withStyles } from '@material-ui/styles';
 import Route from '../../../entities/Route';
 import { uploadMedia, uploadRoute } from '../../../parser/UploadToPod';
+import MuiAlert from '@material-ui/lab/Alert';
+import CloseIcon from '@material-ui/icons/Close';
+import { Snackbar, IconButton } from '@material-ui/core';
 
 import auth from 'solid-auth-client';
 
-async function log(){
+async function log() {
     let session = await auth.currentSession();
     let webId = session.webId.split("profile")[0];
     console.log(webId)
 }
+
+// function upload(route) {
+//     return new Promise(resolve => {
+//         uploadRoute(route, response => resolve(response));
+//     });
+// }
 
 export class NewRouteForm extends Component {
 
@@ -36,6 +45,12 @@ export class NewRouteForm extends Component {
         this.route = null;
 
         this.state = {
+            open: false,
+            message: '',
+            vertical: 'top',
+            horizontal: 'center',
+            severity: '', // success, error, warning, info
+            // ----  route ----
             activeStep: 0,
             name: '',
             description: '',
@@ -83,6 +98,24 @@ export class NewRouteForm extends Component {
         this.setState({ points: points })
     }
 
+
+    // ###########################
+    //        Notification
+    // ###########################
+
+    openNotif = (text, severity) => {
+        this.setState({
+            open: true,
+            message: text,
+            severity: severity
+        });
+    };
+
+    closeNotif = () => {
+        this.setState({ open: false });
+    };
+
+
     // ###########################
     // Download and Upload methods
     // ###########################
@@ -91,9 +124,10 @@ export class NewRouteForm extends Component {
         // download route
     }
 
-    upload = () => {
-        // uploadMedia(this.route.getMedia());
-        uploadRoute(this.route);
+    upload(route) {
+        return new Promise(resolve => {
+            uploadRoute(route, response => resolve(response));
+        });
     }
 
     createRoute = () => {
@@ -105,8 +139,23 @@ export class NewRouteForm extends Component {
         Array.from(videos).forEach(p => media.push(p));
 
         this.route = new Route(name, date, description, points, comments, media);
-        
-        this.upload();
+
+        let statusPromise = this.upload(this.route);
+        // console.log(statusPromise.then(status => console.log(status)))
+        statusPromise.then(status => this.checkSuccessCode(status))
+    }
+
+    checkSuccessCode(code) {
+        switch (code) {
+            case -1: // error
+                this.openNotif("There was an error during this operation", 'error');
+                break;
+            case 0: // success
+                this.openNotif("Your route was successfully saved", 'success');
+                break;
+            default:
+                throw new Error('Unknown Success Code ' + code);
+        }
     }
 
     render() {
@@ -117,10 +166,33 @@ export class NewRouteForm extends Component {
 
         const { classes } = this.props;
 
+        const { open, message, severity } = this.state;
+        const { vertical, horizontal } = this.state;
+
         return (
             <MuiThemeProvider>
                 <React.Fragment>
                     <NavBar />
+                    <Snackbar
+                        anchorOrigin={{ vertical, horizontal }}
+                        open={open}
+                        action={
+                            <React.Fragment>
+                                <IconButton
+                                    aria-label="close"
+                                    color="inherit"
+                                    onClick={this.closeNotif}
+                                >
+                                    <CloseIcon />
+                                </IconButton>
+                            </React.Fragment>
+                        }
+                    >
+                        <Alert onClose={this.closeNotif} severity={severity}>
+                            {message}
+                        </Alert>
+                    </Snackbar>
+
                     <main className={classes.layout}>
                         <Paper className={classes.paper}>
                             <Avatar className={classes.avatar}>
@@ -200,7 +272,7 @@ function getStepContent(step,
                 handleDownload={handleDownload}
             />;
         default:
-            throw new Error('Unknown step');
+            throw new Error('Unknown step ' + step);
     }
 }
 
@@ -249,5 +321,9 @@ const useStyles = theme => ({
         marginLeft: theme.spacing(2),
     }
 });
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 export default withStyles(useStyles)(NewRouteForm);

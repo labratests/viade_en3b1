@@ -18,17 +18,14 @@ export async function uploadMedia(media) {
     });
 }
 
-export async function uploadRoute(route) {
+export async function uploadRoute(route, callback) {
     let session = await auth.currentSession();
     let storageHandler = new PodHandler(session);
     let fileName = route.getName() + "@" + route.getId() + ".jsonld";
-    await storageHandler.storeRoute(fileName, route.getJsonLD(), (urlInPod, response) => {
-        let alertText = "";
-        if (urlInPod === null) {
-            alertText = "ERROR UPLOADING ROUTE"; // error
-        } else {
-            alertText = "SUCCESS UPLOADING ROUTE"; // success
-        }
-        alert(alertText);
+
+    // let successCode = -1; // -1 if error. 0 otherwise.
+    storageHandler.storeRoute(fileName, route.getJsonLD(), (status) => {
+        callback(status);
     });
 }
+
