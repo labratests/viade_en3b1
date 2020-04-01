@@ -53,7 +53,7 @@ export class NewRouteForm extends Component {
         this.setState({ activeStep: activeStep - 1 });
     };
 
-    handleChange = (input) => e => {
+    handleChange = (input) => (e) => {
         this.setState({ [input]: e.target.value });
     }
 

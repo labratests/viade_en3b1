@@ -26,15 +26,17 @@ class Route {
         this.media = media;
         this.totalDistance = undefined;
 
-        if (comments === null)
+        if (comments === null) {
             this.comments = [];
-        else
+        } else {
             this.comments = comments;
+        }
 
-        if (routeElements[0] instanceof RouteElement)
+        if (routeElements[0] instanceof RouteElement) {
             this.routeElements = routeElements;
-        else
+        } else {
             this.routeElements = generateRouteElements(routeElements);
+        }
     }
 
     getId() {
@@ -169,7 +171,7 @@ class Route {
  */
 function generateRouteElements(points) {
     let routeElements = [];
-    points.forEach(p => routeElements.push(new RouteElement(p.lat, p.lng)));
+    points.forEach((p) => routeElements.push(new RouteElement(p.lat, p.lng)));
     return routeElements;
 }
 

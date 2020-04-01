@@ -114,5 +114,5 @@ function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default MapForm
+export default MapForm;
 

@@ -5,10 +5,12 @@ class RouteElement {
         this.longitude = longitude;
         this.elevation = elevation;
 
-        if (name === undefined)
+        if (name === undefined) {
             this.name = "";
-        else
+        } else {
             this.name = name;
+        }
+
     }
 
     getName() {
@@ -31,7 +33,7 @@ class RouteElement {
         return {
             "latitude": this.latitude,
             "longitude": this.longitude,
-        }
+        };
     }
 }
 
