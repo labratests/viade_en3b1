@@ -3,9 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MyRouteCard from './MyRouteCard';
 import { LoggedIn } from '@solid/react';
-import { Card } from '@material-ui/core';
 import Route from'../../entities/Route.js';
 import RouteElement from'../../entities/RouteElement.js';
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,8 +17,6 @@ const useStyles = makeStyles(theme => ({
 export default function ListUserRoutes() {
   const [spacing] = React.useState(2);
   const classes = useStyles();
-
-
 
   let routes=[
     new Route('ruta1','08/04/2020',123,'ruta larga',[
@@ -50,7 +49,7 @@ export default function ListUserRoutes() {
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={spacing}>
-        {routes.map(each => (
+        { routes.map(each => (
           <Grid item>
           <LoggedIn>
             <MyRouteCard route={each} />

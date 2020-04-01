@@ -9,6 +9,7 @@ class UsersManager{
         var user = new User(username[0]);
         loadFromPod.loadAll(user);
     }
+
 }
 
 export default UsersManager;

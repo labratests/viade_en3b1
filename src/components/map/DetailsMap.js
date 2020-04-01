@@ -19,7 +19,12 @@ export default class DetailsMap extends Component {
         
         {this.props.route.getRouteElements().map(point => (
         <Marker position={[point.getLatitude(),point.getLongitude()]}>
-            <Popup>{point.getName()}</Popup>
+            <Popup>
+              <p>{point.getName()}</p>
+              <p>Latitude: {point.getLatitude()}</p>
+              <p>Longitude: {point.getLongitude()}</p>
+              <p>Elevation: {point.getElevation()}</p>
+            </Popup>
         </Marker>
         ))}
       </Map>
