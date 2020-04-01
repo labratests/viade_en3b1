@@ -22,19 +22,19 @@ export default function RouteDetails(props) {
         <Card elevation={5} className={classes.root}>
             <CardContent>
                 <Typography  variant="h5" component="h2">
-                    {props.route.name}
+                    {props.route.getName()}
                 </Typography>
                 <Typography className={classes.pos}>
                     <DetailsMap route={props.route}></DetailsMap>
                 </Typography>
                 <Typography className={classes.pos} >
-                    Date: {props.route.date}
+                    Date: {props.route.getDate()}
                 </Typography>
                 <Typography className={classes.pos} >
-                    Distance: {props.route.totalDistance}
+                    Distance: {props.route.getTotalDistance()}
                 </Typography>
                 <Typography className={classes.pos} >
-                    Time: {props.route.time}
+                    Time: {props.route.getTime()}
                 </Typography>
                 <Typography className={classes.pos} >
                     Description: 

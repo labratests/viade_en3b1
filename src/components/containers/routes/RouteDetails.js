@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import RouteDetailsCard from "../../graphic interface/RouteDetailsCard.js"
 import Route from '../../../entities/Route.js';
 import RouteElement from '../../../entities/RouteElement.js';
+import cache from '../../../cache/RoutesChache';
 
 const RouteDetails = () => {
   let { id } = useParams();
@@ -46,13 +47,15 @@ const RouteDetails = () => {
   // console.log( myroute ) ;
   // console.log( myroute[0] ) ;
 
+  let myroute=cache.getRoutesFromCache().filter((r) => (r.getId()==id));
+
   return (
     <div>
       <div>
         <NavBar />
       </div>
       <div>
-        {/* <RouteDetailsCard route={myroute[0]} ></RouteDetailsCard> */}
+        { <RouteDetailsCard route={myroute[0]} ></RouteDetailsCard> }
       </div>
     </div>
   );

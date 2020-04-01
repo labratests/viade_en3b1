@@ -18,26 +18,27 @@ const useStyles = makeStyles({
 
 export default function MyRouteCard(props) {
   const classes = useStyles();
+  console.log(props.route);
   return (
     <Card elevation={5} className={classes.root}>
       <CardContent>
         <Typography  variant="h5" component="h2">
-          {props.route.name}
+          {props.route.getName()}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Date: {props.route.date}
+          Date: {props.route.getDate()}
         </Typography>
         <Typography variant="h5" component="h2">
           <MapSnapshot route={props.route}></MapSnapshot>
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Distance: {props.route.totalDistance}
+          Distance: {props.route.getTotalDistance()}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Time: {props.route.time}
+          Time: {props.route.getTime()}
         </Typography>
         <Typography className={classes.pos} >
-          <Button className={classes.menuButton} href={"#/RouteDetails/"+props.route.name} color="inherit">Details</Button>
+          <Button className={classes.menuButton} href={"#/RouteDetails/"+props.route.getId()} color="inherit">Details</Button>
         </Typography>
       </CardContent>
     </Card>
