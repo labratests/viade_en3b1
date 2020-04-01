@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import MyRouteCard from './MyRouteCard';
 import { LoggedIn } from '@solid/react';
 import { Card } from '@material-ui/core';
+import { getUser } from '../../entities/UsersManager';
+import { getRoutes } from '../../entities/User';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,11 +18,14 @@ export default function ListUserRoutes() {
   const classes = useStyles();
 
 
-
+  
   let size=[];
   for (let index = 0; index < 5; index++) {
      size.push(1); 
   }
+
+  let user = getUser();
+  let routes = getRoutes(user);
 
   
   return (

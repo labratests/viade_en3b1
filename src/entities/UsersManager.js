@@ -6,9 +6,14 @@ class UsersManager{
     static createUserAndLoadRoutes(webid){
         let loadFromPod = new LoadFromPod();
         var username = webid.slice(8).split(".");
-        var user = new User(username[0]);
-        loadFromPod.loadAll(user);
+        this.user = new User(username[0]);
+        loadFromPod.loadAll(this.user);
     }
+
+}
+
+export function getUser(){
+    return UsersManager.user;
 }
 
 export default UsersManager;

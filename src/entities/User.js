@@ -13,4 +13,8 @@ class User{
     }
 }
 
+export function getRoutes(user){
+    return User.routes;
+}
+
 export default User;
