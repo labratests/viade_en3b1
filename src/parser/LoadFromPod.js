@@ -9,7 +9,7 @@ class LoadFromPod{
 
     async loadAll(user){
         var userWebId = user.toString();
-        var viadeRoutes = userWebId.slice(0, userWebId.length - 16) + "/public/viade/routes";
+        var viadeRoutes = userWebId.slice(0, userWebId.length - 16) + "/viade/routes";
         var files = [];
 
         try {
