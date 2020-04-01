@@ -2,7 +2,7 @@
 == System Scope and Context
 
 === Business Context
-Viade´s main goal is to give the ability to store, visualize and share routes to the routes withou storing the actual data, which is kept by the users.
+Viade´s main goal is to give the ability to store, visualize and be shared to the routes withou storing the actual data, which is kept by the users.
 
 The public target for the applications is all types of users, but especially non-technical users.
 The application will allow the user to store and visualize their routes in a map.
