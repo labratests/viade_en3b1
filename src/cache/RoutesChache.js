@@ -9,14 +9,19 @@ export default {
     //         this.routes.push(Object.assign({}, route));
     //     }
     // }, 
-    async getRoutes() {
-        if(this.routes.length === 0) {
+    async getRoutesFromPod() {
+        if (this.routes.length === 0) {
             this.routes = await loadAllRoutes();
-            console.log("ROUTESCACHE");
+            console.log("ROUTES FROM POD (CACHE)");
             console.log(this.routes);
         }
         return this.routes;
-    }, 
+    },
+    getRoutesFromCache() {
+        console.log("ROUTES FROM CACHE");
+        console.log(this.routes);
+        return this.routes;
+    },
     clear() {
         this.routes = [];
         this.selected = null;

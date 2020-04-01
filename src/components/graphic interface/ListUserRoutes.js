@@ -12,12 +12,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+// async function getRoutes() {
+//   return await cache.getRoutes();
+// }
+
 export class ListUserRoutes extends Component {
 
   constructor() {
     super();
     this.state = {
-      routes: cache.getRoutes()
+      routes: cache.getRoutesFromCache(),
     };
   }
 
@@ -29,12 +33,10 @@ export class ListUserRoutes extends Component {
   }
 
   render() {
-
     const { routes } = this.state;
     
     console.log("LIST USER ROUTES");
     console.log(routes);
-    
 
     return (
       <Grid container style={{ flexGrow: 1 }} spacing={2}>

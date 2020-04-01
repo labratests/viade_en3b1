@@ -31,4 +31,5 @@ export async function loadAllRoutes() {
     let storageHandler = new PodHandler(session);
 
     let loadedRoutes = storageHandler.findAllRoutes();
+    return loadedRoutes;
 }

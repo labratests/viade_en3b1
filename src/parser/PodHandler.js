@@ -71,19 +71,11 @@ class PodHandler {
             try {
                 let contents = await fc.readFolder(url);
                 let files = contents.files;
-                
-                console.log("FILES");
-                console.log(files);
 
                 for (let i = 0; i < files.length; i++) {
                     let fileContent = await fc.readFile(files[i].url);
-                    routes.push(fileContent);
-
+                    routes.push(parser.parse(fileContent));
                 }
-
-                files.forEach(file => {
-                    routes.push(parser.parse(file));
-                });
 
             } catch (error) {
                 console.log("##### ERROR #####")
@@ -94,6 +86,9 @@ class PodHandler {
         } else {
             console.log("There is no routes directory");
         }
+
+        console.log("RUTAS")
+        console.log(routes);
 
         return routes;
     }
