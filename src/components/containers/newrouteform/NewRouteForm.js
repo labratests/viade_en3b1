@@ -1,24 +1,20 @@
-import React, { Component } from 'react'
-import { makeStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import DataForm from '../stepper/dataform/DataForm';
 import ReviewForm from '../stepper/reviewform/ReviewForm';
 import MapForm from '../stepper/mapform/MapForm';
 import NavBar from '../../graphic interface/NavBar';
-import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 import Avatar from '@material-ui/core/Avatar';
-import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import FilterHdrIcon from '@material-ui/icons/FilterHdr';
-import Grid from '@material-ui/core/Grid';
 import SuccessForm from '../stepper/success/SuccessForm';
 import { withStyles } from '@material-ui/styles';
 import Route from '../../../entities/Route';
-import { uploadMedia, uploadRoute } from '../../../parser/RouteHandler';
+import { uploadRoute } from '../../../parser/RouteHandler';
 import MuiAlert from '@material-ui/lab/Alert';
 import CloseIcon from '@material-ui/icons/Close';
 import { Snackbar, IconButton } from '@material-ui/core';
@@ -57,12 +53,12 @@ export class NewRouteForm extends Component {
         this.setState({ activeStep: activeStep - 1 });
     };
 
-    handleChange = input => e => {
+    handleChange = (input) => e => {
         this.setState({ [input]: e.target.value });
     }
 
-    handleDateChange = date => {
-        this.setState({ date: date });
+    handleDateChange = (newDate) => {
+        this.setState({ date: newDate });
     }
 
     handleMediaChange = (selectorFiles: FileList, code) => { // this is not an error, is TypeScript
@@ -74,14 +70,13 @@ export class NewRouteForm extends Component {
                 this.setState({ videos: selectorFiles });
                 break;
             default:
-                alert('Invalid media code!!');
-                console.log(code)
+                alert('Invalid media code!! ' + code);
                 break;
         }
     }
 
-    handleMapPoints = points => {
-        this.setState({ points: points })
+    handleMapPoints = (newPoints) => {
+        this.setState({ points: newPoints });
     }
 
 
@@ -89,11 +84,11 @@ export class NewRouteForm extends Component {
     //        Notification
     // ###########################
 
-    openNotif = (text, severity) => {
+    openNotif = (text, newSeverity) => {
         this.setState({
             open: true,
             message: text,
-            severity: severity
+            severity: newSeverity
         });
     };
 
@@ -111,23 +106,23 @@ export class NewRouteForm extends Component {
     }
 
     upload(route) {
-        return new Promise(resolve => {
-            uploadRoute(route, response => resolve(response));
+        return new Promise((resolve) => {
+            uploadRoute(route, (response) => resolve(response));
         });
     }
 
     createRoute = () => {
         const { name, description, date, photos, videos, points } = this.state;
-        let comments = undefined;
+        let comments = null;
         let media = [];
 
-        Array.from(photos).forEach(p => media.push(p));
-        Array.from(videos).forEach(p => media.push(p));
+        Array.from(photos).forEach((p) => media.push(p));
+        Array.from(videos).forEach((p) => media.push(p));
 
         this.route = new Route(name, date, description, points, comments, media);
 
         let statusPromise = this.upload(this.route);
-        statusPromise.then(status => this.checkSuccessCode(status))
+        statusPromise.then((status) => this.checkSuccessCode(status));
     }
 
     checkSuccessCode(code) {
@@ -213,7 +208,7 @@ export class NewRouteForm extends Component {
                     </main>
                 </React.Fragment>
             </MuiThemeProvider>
-        )
+        );
     }
 }
 
@@ -261,7 +256,7 @@ function getStepContent(step,
     }
 }
 
-const useStyles = theme => ({
+const useStyles = (theme) => ({
     layout: {
         width: 'auto',
         marginLeft: theme.spacing(2),

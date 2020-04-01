@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Map, Polyline, TileLayer, Marker } from 'react-leaflet';
 
 export class EditableMap extends Component {
@@ -14,7 +14,7 @@ export class EditableMap extends Component {
 		this.state.points.push(e.latlng);
         this.setState({ points: this.state.points.slice() });
         
-        if(this.firstPoint == true) {
+        if(this.firstPoint === true) {
             this.props.openNotif("You can move a point by dragging it and delete it just clicking on it", 'info');
             this.firstPoint = false;
         }
@@ -71,8 +71,8 @@ export class EditableMap extends Component {
                     )}
                 </Map>
             </React.Fragment>
-        )
+        );
     }
 }
 
-export default EditableMap
+export default EditableMap;

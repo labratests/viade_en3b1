@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import EditableMap from '../../../map/EditableMap'
-import { Button, Typography, Grid, Snackbar, IconButton } from '@material-ui/core'
+import React, { Component } from 'react';
+import EditableMap from '../../../map/EditableMap';
+import { Button, Typography, Grid, Snackbar, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import MuiAlert from '@material-ui/lab/Alert';
 
@@ -15,12 +15,12 @@ export class MapForm extends Component {
             severity: '',
             vertical: 'top',
             horizontal: 'center',
-        }
+        };
     }
 
-    next = e => {
+    next = (e) => {
         e.preventDefault();
-        if (this.points.current.getTrackPoints() === 'undefined' || this.points.current.getTrackPoints().length == 0) {
+        if (this.points.current.getTrackPoints() === 'undefined' || this.points.current.getTrackPoints().length === 0) {
             this.openNotif("You must select at least one track point!!", 'warning');
             return;
         }
@@ -28,16 +28,16 @@ export class MapForm extends Component {
         this.props.handleMapPoints(this.points.current.getTrackPoints());
     }
 
-    back = e => {
+    back = (e) => {
         e.preventDefault();
         this.props.handleBack();
     }
 
-    openNotif = (text, severity) => {
+    openNotif = (text, newSeverity) => {
         this.setState({
             open: true,
             message: text,
-            severity: severity
+            severity: newSeverity
         });
     };
 
@@ -106,7 +106,7 @@ export class MapForm extends Component {
                     </Grid>
                 </form>
             </React.Fragment>
-        )
+        );
     }
 }
 

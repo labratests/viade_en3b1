@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import { Typography, Grid, Button, TextField } from '@material-ui/core'
+import React, { Component } from 'react';
+import { Typography, Grid, Button, TextField } from '@material-ui/core';
 
 export class ReviewForm extends Component {
 
-    next = e => {
+    next = (e) => {
         e.preventDefault();
         this.props.createRoute();
         this.props.handleNext();
     }
 
-    back = e => {
+    back = (e) => {
         e.preventDefault();
         this.props.handleBack();
     }
@@ -17,7 +17,7 @@ export class ReviewForm extends Component {
     getPointsText(points){
         var pointsText = "";
 
-        points.forEach(p => pointsText += "Lat: "+p.lat+"\tLong: "+p.lng+"\n");
+        points.forEach((p) => pointsText += "Lat: "+p.lat+"\tLong: "+p.lng+"\n");
 
         return pointsText;
     }
@@ -120,8 +120,8 @@ export class ReviewForm extends Component {
                     </Grid>
                 </React.Fragment>
             </div>
-        )
+        );
     }
 }
 
-export default ReviewForm
+export default ReviewForm;

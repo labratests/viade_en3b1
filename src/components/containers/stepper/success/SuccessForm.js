@@ -10,7 +10,7 @@ export class SuccessForm extends Component {
         super(props);
     }
 
-    download = e => {
+    download = (e) => {
         e.preventDefault();
         this.props.handleDownload();
     }
@@ -52,8 +52,8 @@ export class SuccessForm extends Component {
                     </Tooltip>
                 </Grid>
             </React.Fragment>
-        )
+        );
     }
 }
 
-export default SuccessForm
+export default SuccessForm;

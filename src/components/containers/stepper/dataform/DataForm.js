@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -11,11 +11,11 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 export class DataForm extends Component {
 
-    handleDateChange = date => {
+    handleDateChange = (date) => {
         this.props.handleDateChange(date);
     };
 
-    next = e => {
+    next = (e) => {
         e.preventDefault();
         this.props.handleNext();
     }
@@ -136,4 +136,4 @@ export class DataForm extends Component {
     }
 }
 
-export default DataForm
+export default DataForm;
