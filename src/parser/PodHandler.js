@@ -1,6 +1,9 @@
+import ParserJsonLdToRoute from "./ParserJsonLdToRoute";
+
 const auth = require('solid-auth-client');
 const FC = require('solid-file-client');
 const fc = new FC(auth);
+const parser = new ParserJsonLdToRoute();
 
 class PodHandler {
 
@@ -16,6 +19,8 @@ class PodHandler {
         this.resourcesFolder = "resources/"; // for photos and videos 
         this.commentsFolder = "comments/";
     }
+
+    getRoutes
 
     storeRoute(fileName, routeJson, callback = () => { }) {
         let url = this.defaultFolder + this.routesFolder + fileName;
@@ -55,6 +60,37 @@ class PodHandler {
             (response) => { callback(response.url, response); }
             , (error) => { callback(null, error); }
         );
+    }
+
+    async findAllRoutes() {
+        let url = this.defaultFolder + this.routesFolder;
+
+        var routes = [];
+        
+        if (await fc.itemExists(url)) {
+            try {
+                let contents = await fc.readFolder(url);
+                let files = contents.files;
+
+                for (let i = 0; i < files.length; i++) {
+                    let fileContent = await fc.readFile(files[i].url);
+                    routes.push(parser.parse(fileContent));
+                }
+
+            } catch (error) {
+                console.log("##### ERROR #####")
+                console.log(error)         // A full error response 
+                console.log(error.status)  // Just the status code of the error
+                console.log(error.message) // Just the status code and statusText
+            }
+        } else {
+            console.log("There is no routes directory");
+        }
+
+        console.log("RUTAS")
+        console.log(routes);
+
+        return routes;
     }
 }
 

@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import MapSnapshot from '../map/MapSnapshot.js'
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
     root: {
@@ -17,24 +18,27 @@ const useStyles = makeStyles({
 
 export default function MyRouteCard(props) {
   const classes = useStyles();
-
+  console.log(props.route);
   return (
     <Card elevation={5} className={classes.root}>
       <CardContent>
+        <Typography  variant="h5" component="h2">
+          {props.route.getName()}
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          Date: {props.route.getDate()}
+        </Typography>
         <Typography variant="h5" component="h2">
-          Route Name: {props.route.name}
+          <MapSnapshot route={props.route}></MapSnapshot>
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Date: {props.route.date}
-        </Typography>
-        <Typography variant="h5" component="h2">
-          <MapSnapshot></MapSnapshot>
+          Distance: {props.route.getTotalDistance()}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Distance: {props.route.totalDistance}
+          Time: {props.route.getTime()}
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Time: {props.route.time}
+        <Typography className={classes.pos} >
+          <Button className={classes.menuButton} href={"#/RouteDetails/"+props.route.getId()} color="inherit">Details</Button>
         </Typography>
       </CardContent>
     </Card>

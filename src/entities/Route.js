@@ -17,7 +17,7 @@ class Route {
      * @param {Array} comments List of comments
      * @param {Array<String>} media List of urls of media (on the POD)
      */
-    constructor(name, date, description, routeElements, comments, media) {
+    constructor(name, description, routeElements, comments, media, date) {
         this.id = uuid().toString();
         this.name = name;
         this.date = date;

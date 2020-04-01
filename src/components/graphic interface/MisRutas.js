@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button';
 import { Link, MenuItem, Paper, Popper, Grow, MenuList, ListItemIcon, Typography } from '@material-ui/core';
 import ListIcon from '@material-ui/icons/List';
 import EditLocationIcon from '@material-ui/icons/EditLocation';
-import { Redirect } from 'react-router';
 
 const MisRutas = () => {
     const classes = useStyles();
@@ -35,7 +34,7 @@ const MisRutas = () => {
                         <Paper >
                             <MenuList >
 
-                                <MenuItem onClick={event =>  window.location.href='#/dashboard'}>
+                                <MenuItem onClick={event => window.location.href='#/myroutes'}>
                                     <ListItemIcon>
                                         <ListIcon />
                                     </ListItemIcon>

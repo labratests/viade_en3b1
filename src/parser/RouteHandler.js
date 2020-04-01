@@ -26,3 +26,10 @@ export async function uploadRoute(route, callback) {
     });
 }
 
+export async function loadAllRoutes() {
+    let session = await auth.currentSession();
+    let storageHandler = new PodHandler(session);
+
+    let loadedRoutes = storageHandler.findAllRoutes();
+    return loadedRoutes;
+}

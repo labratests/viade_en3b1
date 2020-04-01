@@ -4,7 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Login from "../services/login/Login.js";
-import { LoggedOut } from '@solid/react';
+import { LoggedOut, LoggedIn } from '@solid/react';
 import { Link } from '@material-ui/core';
 import "typeface-roboto";
 import MisRutas from './MisRutas.js';
@@ -18,7 +18,7 @@ const NavBar = () => {
         <Toolbar >
           <Link underline='none' color='inherit' href={'#/welcome'} className={classes.title}>Viade</Link>
 
-          <MisRutas></MisRutas>
+          <LoggedIn><MisRutas /></LoggedIn>
           <LoggedOut><Button className={classes.menuButton} href={"#/register"} color="inherit">Sign up</Button></LoggedOut>
           <Login />
         </Toolbar>
