@@ -32,7 +32,7 @@ export default function ListUserRoutes() {
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={spacing}>
-        {size.map(card => (
+          {routes.map(card => (
           <Grid item>
           <LoggedIn>
             <MyRouteCard route={card} />
