@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function RouteDetails(props) {
-    const [spacing] = React.useState(2);
     const classes = useStyles();
 
     return (

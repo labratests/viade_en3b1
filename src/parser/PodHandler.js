@@ -37,22 +37,22 @@ class PodHandler {
         // return successCode;
     }
 
-    async storeMedia(mediaList, callback = () => { }) {
-        if (!mediaList.length) {
-            return Promise.reject('No media to upload');
-        }
-        if (!validMediaType(mediaList)) {
-            return Promise.reject('Media must be image or video');
-        }
+    // async storeMedia(mediaList, callback = () => { }) {
+    //     if (!mediaList.length) {
+    //         return Promise.reject('No media to upload');
+    //     }
+    //     if (!validMediaType(mediaList)) {
+    //         return Promise.reject('Media must be image or video');
+    //     }
 
-        let url = this.defaultFolder + this.resourcesFolder;
+    //     let url = this.defaultFolder + this.resourcesFolder;
 
-        let buildPath = '';
-        Array.from(mediaList).forEach(file => {
-            buildPath = url + file.name;
-            this.storeMedia(buildPath, file, file.type, callback)
-        });
-    }
+    //     let buildPath = '';
+    //     Array.from(mediaList).forEach(file => {
+    //         buildPath = url + file.name;
+    //         this.storeMedia(buildPath, file, file.type, callback)
+    //     });
+    // }
 
     storeMedia(url, data, contentType, callback) {
         let response = fc.putFile(url, data, contentType);
@@ -94,22 +94,22 @@ class PodHandler {
     }
 }
 
-const mediaType = {
-    image: /\.(jpe?g|gif|bmp|png|svg|tiff?)$/i,
-    video: /\.(mp4|webm|ogg)$/i
-}
+// const mediaType = {
+//     image: /\.(jpe?g|gif|bmp|png|svg|tiff?)$/i,
+//     video: /\.(mp4|webm|ogg)$/i
+// }
 
-function validMediaType(mediaList) {
-    let valid = true;
+// function validMediaType(mediaList) {
+//     let valid = true;
 
-    mediaList.forEach(file => {
-        if (!(mediaType.image.test(file.name) || mediaType.video.test(file.name))) {
-            valid = false;
-        }
-    });
+//     mediaList.forEach(file => {
+//         if (!(mediaType.image.test(file.name) || mediaType.video.test(file.name))) {
+//             valid = false;
+//         }
+//     });
 
-    return valid;
-}
+//     return valid;
+// }
 
 
 
