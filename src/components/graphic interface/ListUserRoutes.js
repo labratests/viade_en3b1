@@ -21,9 +21,6 @@ export class ListUserRoutes extends Component {
 
   render() {
     const { routes } = this.state;
-    
-    console.log("LIST USER ROUTES");
-    console.log(routes);
 
     return (
       <Grid container style={{ flexGrow: 1 }} spacing={2}>

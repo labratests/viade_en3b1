@@ -24,7 +24,7 @@ class Route {
         this.description = description;
 
         this.media = media;
-        this.totalDistance = undefined;
+        this.totalDistance = null;
 
         if (comments === null) {
             this.comments = [];
