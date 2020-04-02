@@ -24,7 +24,7 @@ class PodHandler {
 
     storeRoute(fileName, routeJson, callback = () => { }) {
         let url = this.defaultFolder + this.routesFolder + fileName;
-        this.storeFile(url, routeJson, callback)
+        this.storeFile(url, routeJson, callback);
     }
 
     storeFile(url, data, callback) {
@@ -78,17 +78,17 @@ class PodHandler {
                 }
 
             } catch (error) {
-                console.log("##### ERROR #####")
-                console.log(error)         // A full error response 
-                console.log(error.status)  // Just the status code of the error
-                console.log(error.message) // Just the status code and statusText
+                // console.log("##### ERROR #####");
+                // console.log(error);         // A full error response 
+                // console.log(error.status);  // Just the status code of the error
+                // console.log(error.message); // Just the status code and statusText
             }
         } else {
             console.log("There is no routes directory");
         }
 
-        console.log("RUTAS")
-        console.log(routes);
+        // console.log("RUTAS");
+        // console.log(routes);
 
         return routes;
     }

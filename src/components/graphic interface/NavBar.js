@@ -27,11 +27,10 @@ const NavBar = () => {
         </Toolbar>
       </AppBar>
     </div>
-  )
+  );
+};
 
-}
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },

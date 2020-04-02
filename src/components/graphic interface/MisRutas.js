@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import { MenuItem, Paper, Popper, Grow, MenuList, ListItemIcon, Typography } from '@material-ui/core';
 import ListIcon from '@material-ui/icons/List';
@@ -9,7 +9,7 @@ const MisRutas = () => {
     const anchorRef = React.useRef(null);
 
     const handleToggle = () => {
-        setOpen(prevOpen => !prevOpen);
+        setOpen((prevOpen) => !prevOpen);
     };
 
     return (
@@ -23,7 +23,7 @@ const MisRutas = () => {
             >
                 My Routes
             </Button>
-            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+            <Popper open={open} anchorEl={anchorRef.current} transition disablePortal>
                 {({ TransitionProps, placement }) => (
                     <Grow
                         {...TransitionProps}
@@ -32,14 +32,14 @@ const MisRutas = () => {
                         <Paper >
                             <MenuList >
 
-                                <MenuItem onClick={event => window.location.href='#/myroutes'}>
+                                <MenuItem onClick={() => window.location.href='#/myroutes'}>
                                     <ListItemIcon>
                                         <ListIcon />
                                     </ListItemIcon>
                                     <Typography>See routes</Typography>
                                 </MenuItem>
 
-                                <MenuItem onClick={event =>  window.location.href='#/newRoute'}>
+                                <MenuItem onClick={() =>  window.location.href='#/newRoute'}>
                                     <ListItemIcon>
                                         <EditLocationIcon />
                                     </ListItemIcon>
@@ -52,7 +52,7 @@ const MisRutas = () => {
                 )}
             </Popper>
         </div>
-    )
-}
+    );
+};
 
-export default MisRutas
+export default MisRutas;
