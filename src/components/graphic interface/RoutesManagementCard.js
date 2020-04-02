@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Example from "../../routes/Example.js";
 
 const useStyles = makeStyles({
     root: {
@@ -31,6 +32,9 @@ export default function CardRouteManagement() {
         </CardActions>
         <CardActions>
             <Button size="small">Share route</Button>
+        </CardActions>
+        <CardActions>
+            <Button size="small" onClick={() => console.log(new Example().parse())}>Add Mock route</Button>
         </CardActions>
       </Card>
     );

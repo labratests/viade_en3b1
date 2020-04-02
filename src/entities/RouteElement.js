@@ -1,24 +1,40 @@
-class RouteElement{
-    constructor( name, latitude, londitude, elevation ){
-        this.name = name;
+class RouteElement {
+    constructor(latitude, longitude, name, elevation) {
+
         this.latitude = latitude;
-        this.londitude = londitude;
+        this.longitude = longitude;
         this.elevation = elevation;
+
+        if (name === undefined) {
+            this.name = "";
+        } else {
+            this.name = name;
+        }
+
     }
 
-    getName(){
+    getName() {
         return this.name;
     }
 
-    getLatitude(){
+    getLatitude() {
         return this.latitude;
     }
 
-    getElevation(){
+    getElevation() {
         return this.elevation;
     }
 
-    getLongitude(){
-        return this.londitude;
+    getLongitude() {
+        return this.longitude;
+    }
+
+    toJsonLatLng() {
+        return {
+            "latitude": this.latitude,
+            "longitude": this.longitude,
+        };
     }
 }
+
+export default RouteElement;

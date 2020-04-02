@@ -35,7 +35,7 @@ export default function FriendsManagement() {
         <Typography variant="h5" component="h2">
           Friends
         </Typography>
-        <List src = "user.vcard_url"
+        <List src = "user.friends"
             children = {childrenTrimmed} >
         </List>
       </CardContent>
