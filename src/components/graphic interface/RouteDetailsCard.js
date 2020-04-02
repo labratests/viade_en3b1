@@ -17,8 +17,8 @@ export default function RouteDetails(props) {
   const classes = useStyles();
   
   return (
-    <Grid container className={classes.root} spacing={2}>
-      <Grid item xs={12}>
+    <Grid container className={classes.root} spacing={1}>
+      <Grid item xs={6}>
         <Card elevation={5} className={classes.root}>
             <CardContent>
                 <Typography  variant="h5" component="h2">
@@ -27,37 +27,70 @@ export default function RouteDetails(props) {
                 <Typography className={classes.pos}>
                     <DetailsMap route={props.route}></DetailsMap>
                 </Typography>
-                <Typography className={classes.pos} >
-                    Date: {props.route.getDate()}
-                </Typography>
-                <Typography className={classes.pos} >
-                    Distance: {props.route.getTotalDistance()}
-                </Typography>
-                <Typography className={classes.pos} >
-                    Time: {props.route.getTime()}
-                </Typography>
-                <Typography className={classes.pos} >
-                    Description: 
-                </Typography>
-                <Typography className={classes.pos} >
-                    {props.route.getDescription()}
-                </Typography>
-                <Typography className={classes.pos} >
-                    Coments: 
-                </Typography>
-                {
-                    Array.isArray(props.route.getComments()) && //is empty??
-                        props.route.getComments().map((comment)=>
-                        (
-                            <Typography className={classes.pos} >
-                                {comment}
-                            </Typography>
-                        )
-                        )
-                }
-                
             </CardContent>
         </Card>
+      </Grid>
+      <Grid item xs={6}>
+        <Grid container direction="column" spacing={1} alignItems = "stretch" justify="flex-start">
+            <Grid item xs={12}>
+            <Card elevation={5} className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.pos} >
+                        Date: {props.route.getDate()}
+                    </Typography>
+                </CardContent>
+            </Card>
+            </Grid>
+            <Grid item xs={12}>
+                <Card elevation={5} className={classes.root}>
+                    <CardContent>
+                        <Typography className={classes.pos} >
+                            Distance: {props.route.getTotalDistance()}
+                        </Typography>
+                </CardContent>
+            </Card>
+            </Grid>
+            <Grid item xs={12}>
+            <Card elevation={5} className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.pos} >
+                        Time: {props.route.getTime()}
+                    </Typography>
+                </CardContent>
+            </Card>
+            </Grid>
+            <Grid item xs={12}>
+            <Card elevation={5} className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.pos} >
+                        Description: 
+                    </Typography>
+                    <Typography className={classes.pos} >
+                        {props.route.getDescription()}
+                    </Typography>
+                </CardContent>
+            </Card>
+            </Grid>
+            <Grid item xs={12}>
+            <Card elevation={5} className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.pos} >
+                        Coments: 
+                    </Typography>
+                    {
+                        Array.isArray(props.route.getComments()) && //is empty??
+                            props.route.getComments().map((comment)=>
+                            (
+                                <Typography className={classes.pos} >
+                                    {comment}
+                                </Typography>
+                            )
+                            )
+                    }
+                </CardContent>
+            </Card>
+            </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
