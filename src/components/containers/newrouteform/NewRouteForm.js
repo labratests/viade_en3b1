@@ -18,6 +18,7 @@ import { uploadRoute } from '../../../parser/RouteHandler';
 import MuiAlert from '@material-ui/lab/Alert';
 import CloseIcon from '@material-ui/icons/Close';
 import { Snackbar, IconButton } from '@material-ui/core';
+import cache from '../../../cache/RoutesChache';
 
 export class NewRouteForm extends Component {
 
@@ -102,10 +103,17 @@ export class NewRouteForm extends Component {
     // ###########################
 
     handleDownload = () => {
-        // download route
+        const fileData = this.route.getJsonLD();
+        const blob = new Blob([fileData], { type: "text/plain" });
+		const url = URL.createObjectURL(blob);
+		const link = document.createElement('a');
+		link.download = this.route.getName() + ".json";
+		link.href = url;
+		link.click();
     }
 
     upload(route) {
+        cache.addRouteToCache(route);
         return new Promise((resolve) => {
             uploadRoute(route, (response) => resolve(response));
         });
@@ -119,7 +127,7 @@ export class NewRouteForm extends Component {
         Array.from(photos).forEach((p) => media.push(p));
         Array.from(videos).forEach((p) => media.push(p));
 
-        this.route = new Route(name, date, description, points, comments, media);
+        this.route = new Route(name, description, points, comments, media, date);
 
         let statusPromise = this.upload(this.route);
         statusPromise.then((status) => this.checkSuccessCode(status));
